@@ -1,53 +1,23 @@
-/* --- Mell - Rich & Sweet Honey Theme (Full Corrected Version) --- */
-:root {
-    /* ძირითადი ფერები */
-    --bg-body: #FFF6E0;       /* მსუყე ვანილისფერი ფონი */
-    
-    /* გრადიენტი - ზედა მარჯვენა კუთხიდან ქვედა მარცხენასკენ */
-    --hero-bg-dark: #F0C27B;  /* ღრმა თაფლისფერი */
-    --hero-bg-mid: #FFE8B6;   /* გარდამავალი კრემი */
-    --hero-bg-light: #FFF6E0; /* ფონის ფერთან შერწყმული */
-    
-    --card-bg: #FFFFFF;       /* პროდუქტის ბარათების თეთრი ფონი */
-    --accent: #D69E2E;        /* ოქროსფერი/თაფლისფერი */
-    --text-main: #4A332A;     /* მუქი შოკოლადისფერი ტექსტისთვის */
-    --text-light: #8D6E63;    /* ღია ყავისფერი */
-    
-    --font-head: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
-}
-
-/* საბაზისო პარამეტრები */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-body {
-    font-family: var(--font-body);
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-a { 
-    text-decoration: none; 
-    transition: 0.3s ease; 
-}
-
-ul { list-style: none; }
-
-/* --- ნავიგაცია (Header) --- */
+/* --- ნავიგაცია (Header) - გამჭვირვალე ვერსია --- */
 .site-header {
-    background: rgba(240, 194, 123, 0.95); 
-    padding: 10px 0; /* ცოტა დავაპატარავეთ სიმაღლე */
-    position: fixed; 
-    top:
+    background: transparent; /* ფონი სრულიად გავაქრეთ */
+    padding: 25px 0;         /* ოდნავ გავზარდეთ დაშორება */
+    position: absolute;      /* 'fixed'-ის ნაცვლად 'absolute', რომ ფონს შეერწყას */
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    box-shadow: none;        /* აი ეს ჩრდილი ქმნიდა "ხაზის" ეფექტს, ახლა წავშალეთ */
+}
+
+/* რომ მენიუს ლინკები კარგად ჩანდეს გამჭვირვალე ფონზე */
+.main-nav a { 
+    color: var(--text-main); 
+    font-weight: 700; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.main-nav a:hover { 
+    color: #fff; 
+}
