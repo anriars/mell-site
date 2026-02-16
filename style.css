@@ -1,115 +1,53 @@
-/* --- Mell - Rich & Sweet Honey Theme --- */
+/* --- Mell - Rich & Sweet Honey Theme (Full Corrected Version) --- */
 :root {
-    /* მთავარი ცვლილება: ფონი აღარ არის თითქმის თეთრი, ახლა ნაღებისფერია */
-    --bg-body: #FFF6E0;       /* მსუყე ვანილისფერი */
+    /* ძირითადი ფერები */
+    --bg-body: #FFF6E0;       /* მსუყე ვანილისფერი ფონი */
     
-    /* გრადიენტი - უფრო მუქი და თბილი */
-    --hero-bg-dark: #F0C27B;  /* ღრმა თაფლისფერი/გარგარისფერი (ზედა კუთხე) */
-    --hero-bg-light: #FFF6E0; /* ქვედა კუთხე (იგივე რაც ფონი, რომ შეერწყას) */
+    /* გრადიენტი - ზედა მარჯვენა კუთხიდან ქვედა მარცხენასკენ */
+    --hero-bg-dark: #F0C27B;  /* ღრმა თაფლისფერი */
+    --hero-bg-mid: #FFE8B6;   /* გარდამავალი კრემი */
+    --hero-bg-light: #FFF6E0; /* ფონის ფერთან შერწყმული */
     
-    --card-bg: #FFFFFF;       /* ბარათები რჩება თეთრი კონტრასტისთვის */
-    
-    /* ღილაკები - სურათზე უფრო მდოგვისფერი/ოქროსფერია */
-    --accent: #D69E2E;        /* უფრო "მძიმე" ოქროსფერი */
-    --accent-hover: #B7791F;  
-    
-    --text-main: #4A332A;     /* ძალიან მუქი ყავისფერი (შავის ნაცვლად) */
-    --text-light: #8D6E63;    
+    --card-bg: #FFFFFF;       /* პროდუქტის ბარათების თეთრი ფონი */
+    --accent: #D69E2E;        /* ოქროსფერი/თაფლისფერი */
+    --text-main: #4A332A;     /* მუქი შოკოლადისფერი ტექსტისთვის */
+    --text-light: #8D6E63;    /* ღია ყავისფერი */
     
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* საბაზისო პარამეტრები */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: var(--font-body);
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-a { text-decoration: none; transition: 0.3s; }
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+a { 
+    text-decoration: none; 
+    transition: 0.3s ease; 
+}
+
 ul { list-style: none; }
 
-/* --- Header --- */
+/* --- ნავიგაცია (Header) --- */
 .site-header {
-    /* ჰედერიც შევაფერადეთ, რომ არ იყოს ძალიან გამჭვირვალე */
-    background: rgba(240, 194, 123, 0.9); 
-    padding: 20px 0;
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 20px rgba(74, 51, 42, 0.05);
-}
-.header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: var(--font-head); font-weight: 800; font-size: 26px; color: var(--text-main); letter-spacing: -0.5px; }
-.main-nav ul { display: flex; gap: 25px; }
-.main-nav a { color: var(--text-main); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-.main-nav a:hover { color: #fff; } /* ჰოვერზე თეთრი ეფექტი */
-
-/* --- Hero Section --- */
-.hero-section {
-    padding: 180px 0 120px;
-    
-    /* გრადიენტის მიმართულება იგივეა (მარჯვნიდან-მარცხნივ), მაგრამ ფერებია "მსუყე" */
-    background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, #FFE8B6 50%, var(--hero-bg-light) 100%);
-    
-    min-height: 85vh; 
-    display: flex; align-items: center;
-    border-bottom-left-radius: 80px; 
-}
-
-.hero-content { display: flex; align-items: center; gap: 60px; }
-.hero-text { flex: 1; }
-.hero-text h1 { 
-    font-family: var(--font-head); 
-    font-size: 54px; 
-    line-height: 1.1; 
-    margin-bottom: 24px; 
-    font-weight: 800;
-    color: var(--text-main);
-}
-/* სიტყვა "თაფლი" და "კოლექცია" */
-.honey-text { color: #B7791F; /* უფრო მუქი თაფლისფერი */ }
-
-.hero-text p { color: var(--text-main); font-size: 18px; margin-bottom: 35px; opacity: 0.8; font-weight: 500; }
-
-.hero-image-placeholder {
-    flex: 1; height: 450px; 
-    background: #fff; /* აქ თეთრი რჩება, რომ პროდუქტი გამოჩნდეს */
-    border-radius: 40px;
-    box-shadow: 20px 20px 60px rgba(214, 158, 46, 0.25); /* ჩრდილიც ფერადია! */
-    display: flex; justify-content: center; align-items: center;
-    border: 6px solid rgba(255,255,255,0.5);
-}
-.hero-image-placeholder span { color: #d0d0d0; font-weight: 700; font-size: 18px; }
-
-/* --- Products Section --- */
-.products-section { padding: 80px 0; background-color: var(--bg-body); }
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-header h2 { font-size: 40px; font-family: var(--font-head); color: var(--text-main); }
-.section-header p { color: var(--text-light); font-size: 16px; }
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-}
-{.logo-img {
-    height: 50px; /* აქედან მართე სიმაღლე */
-    width: auto;
-    display: block;
-}
-
-.product-card {
-    background: var(--card-bg);
-    border-radius: 24px; 
-    overflow: hidden;
-    /* ბარათს აქვს უფრო რბილი და ღრმა ჩრდილი */
-    box-shadow: 0 15px 35px rgba(74, 51, 42, 0.08); 
-    transition: transform 0.3s ease;
-}
-.product-card:hover { transform: translateY(-10px); }
-
-.product-image { height: 260
+    background: rgba(240, 194, 123, 0.95); 
+    padding: 10px 0; /* ცოტა დავაპატარავეთ სიმაღლე */
+    position: fixed; 
+    top:
