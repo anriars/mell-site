@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mell - Honey & Nuts</title>
+    <style>
+        :root {
+            --bg-color: #121318;
+            --card-bg: #1e1f26;
+            --accent-color: #ed7e1d;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-main);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* მუყაოს ფაქტურის ეფექტი (Noise Overlay) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            /* ეს ქმნის ნაზ მარცვლოვან ეფექტს */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04; /* ძალიან ნაზი, რომ თვალს არ მოხვდეს */
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            background: rgba(18, 19, 24, 0.8);
+            backdrop-filter: blur(10px); /* შუშის ეფექტი */
+            position: sticky;
+            top: 0;
+            z-index: 101;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo-img { max-width: 90px; filter: invert(1); }
+
+        .hero { 
+            padding: 120px 5%; 
+            text-align: left; 
+            background: linear-gradient(45deg, #121318 30%, transparent);
+        }
+
+        .hero h1 { 
+            font-size: 4rem; 
+            margin: 0; 
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .hero span { color: var(--accent-color); }
+
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            padding: 40px 5%; 
+        }
+
+        /* ბარათი მუყაოს ფაქტურით */
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 24px; 
+            overflow: hidden;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .card:hover { 
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 300px;
+            background: #2a2b33;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-content { padding: 30px; }
+
+        .price { 
+            color: var(--accent-color); 
+            font-size: 2rem; 
+            font-weight: 800; 
+            margin: 10px 0;
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--accent-color);
+            width: 60px; height: 60px;
+            border-radius: 20px; /* ოდნავ კვადრატული მომრგვალება */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(237, 126, 29, 0.3);
+            text-decoration: none;
+            z-index: 1001;
+            transition: 0.3s;
+        }
+
+        .wa-float:hover { transform: rotate(10deg) scale(1.1); }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Mell Logo" class="logo-img">
+    <div style="font-weight: bold; font-size: 0.8rem; letter-spacing: 2px;">MENU</div>
+</header>
+
+<section class="hero">
+    <h1>Natural<span>.</span><br>Premium<span>.</span><br>Mell<span>.</span></h1>
+    <p>საუკეთესო ქართული თაფლი და მოხალული თხილეული</p>
+    <a href="https://wa.me/995XXXXXXXXX" style="background: var(--accent-color); color: white; text-decoration: none; padding: 18px 40px; border-radius: 12px; font-weight: bold; display: inline-block; margin-top: 20px;">შეკვეთა</a>
+</section>
+
+<div class="product-grid">
+    <div class="card">
+        <div class="img-container">Product Image</div>
+        <div class="card-content">
+            <h3 style="margin:0">თაფლი ნიგვზით</h3>
+            <div class="price">15.00 ₾</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">მოხალული ნიგოზი და ნატურალური თაფლი</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="img-container">Product Image</div>
+        <div class="card-content">
+            <h3 style="margin:0">თაფლი თხილით</h3>
+            <div class="price">15.00 ₾</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">ნატურალური ენერგია ყოველ ქილაში</p>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/995XXXXXXXXX" class="wa-float">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12.031 6.172c-2.28 0-4.13 1.85-4.13 4.13s1.85 4.13 4.13 4.13 4.13-1.85 4.13-4.13-1.85-4.13-4.13-4.13zm.031 15c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+</a>
+
+</body>
+</html>
