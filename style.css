@@ -1,9 +1,9 @@
-/* --- Mell - Official Rich Honey Style --- */
+/* --- Mell - Rich Brand Style (Fixed) --- */
 :root {
-    --bg-creme: #FFF9ED;    /* უფრო მსუყე ვანილისფერი */
-    --honey-rich: #F0B159;  /* გაჯერებული თაფლისფერი (ნიმუშის მიხედვით) */
-    --honey-dark: #B7791F;  /* მუქი ამბერი */
-    --text-coffee: #3E2723; /* მუქი ყავისფერი ტექსტისთვის */
+    --bg-creme: #FFF9ED;    
+    --honey-rich: #F0B159;  /* თბილი თაფლისფერი */
+    --honey-dark: #B7791F;  
+    --text-coffee: #3E2723; 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +18,7 @@ body {
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 a { text-decoration: none; transition: 0.3s ease; }
 
-/* --- Seamless Header --- */
+/* Header */
 .site-header { 
     position: absolute; top: 0; width: 100%; 
     padding: 30px 0; z-index: 100; 
@@ -27,93 +27,107 @@ a { text-decoration: none; transition: 0.3s ease; }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
 .logo-img { height: 50px; width: auto; }
 .main-nav ul { display: flex; gap: 30px; }
-.main-nav a { 
-    color: var(--text-coffee); 
-    font-weight: 700; 
-    font-size: 13px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-}
-.main-nav a:hover { color: var(--honey-dark); }
+.main-nav a { color: var(--text-coffee); font-weight: 700; font-size: 13px; text-transform: uppercase; }
 
-/* --- Hero Section - "Rich Apricot" Gradient --- */
+/* Hero Section */
 .hero-section {
     padding: 180px 0 100px;
-    /* გრადიენტი ზედა მარჯვენა კუთხიდან, როგორც ნიმუშშია */
-    background: linear-gradient(225deg, var(--honey-rich) 0%, #FFEFCF 40%, var(--bg-creme) 100%);
-    min-height: 85vh; 
+    background: linear-gradient(225deg, var(--honey-rich) 0%, #FFEFCF 45%, var(--bg-creme) 100%);
+    min-height: 80vh; 
     display: flex; 
     align-items: center;
     border-bottom-left-radius: 80px;
 }
-.hero-content { display: flex; align-items: center; gap: 60px; }
+.hero-content { display: flex; align-items: center; gap: 50px; }
 .hero-text { flex: 1.2; }
 .hero-text h1 { 
     font-family: 'Montserrat', sans-serif; 
-    font-size: 54px; 
+    font-size: 52px; 
     font-weight: 900; 
     line-height: 1.1; 
     margin-bottom: 25px; 
-    color: var(--text-coffee);
 }
 .honey-text { color: var(--honey-dark); }
-.hero-text p { font-size: 18px; margin-bottom: 35px; opacity: 0.9; max-width: 480px; }
+.hero-text p { font-size: 18px; margin-bottom: 35px; opacity: 0.9; }
 
 .hero-image-placeholder {
     flex: 1; height: 450px; 
-    background: #fff; 
-    border-radius: 40px;
-    box-shadow: 25px 25px 60px rgba(183, 121, 31, 0.15);
+    background: #fff; border-radius: 40px;
+    box-shadow: 20px 20px 60px rgba(183, 121, 31, 0.15);
     display: flex; justify-content: center; align-items: center; 
-    border: 8px solid rgba(255,255,255,0.6);
+    border: 6px solid rgba(255,255,255,0.6);
 }
-.placeholder-text { color: #e0e0e0; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+.placeholder-text { color: #eee; font-weight: 800; text-transform: uppercase; }
 
-/* --- Products Section (გასწორებული Grid) --- */
-.products-section { padding: 100px 0; background: var(--bg-creme); }
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-header h2 { font-size: 42px; font-family: 'Montserrat', sans-serif; color: var(--text-coffee); }
+/* --- Products Section (აღდგენილი და გასწორებული) --- */
+.products-section { 
+    padding: 100px 0; 
+    background-color: var(--bg-creme); 
+}
 
+.section-header { 
+    text-align: center; 
+    margin-bottom: 60px; 
+}
+
+.section-header h2 { 
+    font-size: 40px; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* აი ეს ნაწილი აკლდა ან არ მუშაობდა! */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .product-card {
-    background: #fff; 
+    background: #ffffff; 
     border-radius: 25px; 
     padding: 30px; 
     text-align: center;
-    box-shadow: 0 15px 35px rgba(62, 39, 35, 0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.05);
+    transition: 0.3s;
 }
-.product-card:hover { transform: translateY(-10px); }
+
+.product-card:hover { 
+    transform: translateY(-10px); 
+}
 
 .product-image { 
-    height: 220px; 
+    height: 200px; 
     background: #FFFBF2; 
     border-radius: 20px; 
     margin-bottom: 20px; 
-    display: flex; align-items: center; justify-content: center; 
-    color: #eee; font-weight: 700;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #ddd; 
 }
-.product-info h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 10px; font-size: 20px; }
-.price { font-size: 26px; font-weight: 800; color: var(--honey-rich); margin-bottom: 20px; display: block; }
 
-/* --- Buttons --- */
-.btn { padding: 14px 35px; border-radius: 50px; font-weight: 800; display: inline-block; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
-.btn-dark { background: var(--text-coffee); color: #fff; box-shadow: 0 10px 20px rgba(62, 39, 35, 0.2); }
-.btn-dark:hover { background: var(--honey-dark); transform: translateY(-2px); }
+.product-info h3 { 
+    margin-bottom: 10px; 
+    font-size: 20px; 
+}
 
+.price { 
+    font-size: 24px; 
+    font-weight: 800; 
+    color: var(--honey-rich); 
+    margin-bottom: 20px; 
+    display: block; 
+}
+
+/* Buttons */
+.btn { padding: 14px 30px; border-radius: 50px; font-weight: 800; display: inline-block; font-size: 12px; }
+.btn-dark { background: var(--text-coffee); color: #fff; }
 .btn-outline { 
-    border: 2.5px solid var(--text-coffee); 
+    border: 2px solid var(--text-coffee); 
     color: var(--text-coffee); 
     padding: 10px 25px; 
     border-radius: 50px; 
     font-weight: 800; 
-    font-size: 12px;
 }
-.btn-outline:hover { background: var(--text-coffee); color: #fff; }
 
-footer { text-align: center; padding: 60px 0; opacity: 0.5; font-weight: 600; }
+footer { text-align: center; padding: 60px 0; opacity: 0.5; }
