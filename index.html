@@ -3,88 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mell - ნატურალური თაფლი და თხილეული კახეთიდან</title>
-    
-    <meta name="description" content="Mell - პრემიუმ ხარისხის ნატურალური თაფლი მოხალული ნიგვზით, თხილით და ნუშით გურჯაანიდან.">
-    <meta name="author" content="Anri">
+    <title>Mell - თაფლი მოხალული თხილეულით</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                Mell
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">მთავარი</a></li>
+                    <li><a href="#products">პროდუქცია</a></li>
+                    <li><a href="#blog">ბლოგი</a></li>
+                    <li><a href="#contact">კონტაქტი</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                 <a href="https://wa.me/995555555555" target="_blank" class="btn btn-gold">შეკვეთა (WhatsApp)</a>
+            </div>
+        </div>
+    </header>
 
-    <style>
-        :root {
-            --bg-color: #121318;
-            --card-bg: #1e1f26;
-            --accent-color: #ed7e1d; /* შენი Pinterest-ის ნარინჯისფერი */
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-        }
+    <section id="home" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>პრემიუმ <span class="honey-text">თაფლი</span><br> მოხალული თხილეულით</h1>
+                <p>აღმოაჩინე ბუნებრივი თაფლისა და ხრაშუნა, ახალმოხალული თხილეულის იდეალური კომბინაცია. ჯანსაღი და დახვეწილი დესერტი.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-gold">იხილეთ პროდუქცია</a>
+                    <a href="#contact" class="btn btn-outline">დაგვიკავშირდით</a>
+                </div>
+            </div>
+            <div class="hero-image-placeholder">
+                <span>პროდუქტის ფოტო</span>
+            </div>
+        </div>
+    </section>
 
-        body { 
-            font-family: 'Inter', 'Segoe UI', sans-serif; 
-            margin: 0; 
-            background-color: var(--bg-color); 
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
+    <section style="height: 500px; background-color: #F4E8D1;">
+        <div class="container">
+            <h2 style="color: #3E2723; padding-top: 50px;">პროდუქცია მალე დაემატება...</h2>
+        </div>
+    </section>
 
-        /* მუყაოს ფაქტურის ეფექტი */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: 1000;
-        }
-
-        header { 
-            padding: 20px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            background: rgba(18, 19, 24, 0.85);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 101;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .logo-img { max-width: 90px; filter: invert(1); }
-
-        .hero { 
-            padding: 100px 5%; 
-            background: linear-gradient(rgba(18, 19, 24, 0.2), var(--bg-color)), url('https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?q=80&w=1500&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            text-align: left;
-        }
-
-        .hero h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            margin: 0; 
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-
-        .hero span { color: var(--accent-color); }
-
-        .product-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-            padding: 60px 5%; 
-        }
-
-        .card { 
-            background: var(--card-bg); 
-            border-radius: 24px; 
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
-        }
-
-        .card:hover
+</body>
+</html>
