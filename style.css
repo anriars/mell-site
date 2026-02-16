@@ -1,9 +1,9 @@
-/* --- Mell - Warm/Organic Theme (კრემისფერი დიზაინი) --- */
+/* --- Mell - Warm/Organic Theme (სრული სტილები) --- */
 :root {
-    --color-bg-main: #FDF6E3;      /* ძალიან ღია კრემისფერი */
+    --color-bg-main: #FDF6E3;      /* ღია კრემისფერი */
     --color-bg-secondary: #F4E8D1; /* ოდნავ მუქი კრემისფერი */
     --color-accent: #D4A373;       /* კარამელის/თხილის ფერი */
-    --color-text-main: #3E2723;    /* მუქი ყავისფერი/შოკოლადისფერი */
+    --color-text-main: #3E2723;    /* მუქი ყავისფერი */
     --color-text-muted: #6D4C41;   /* ღია ყავისფერი ტექსტი */
     
     --font-heading: 'Montserrat', sans-serif;
@@ -15,6 +15,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* სქროლის დროს სირბილე */
 }
 
 body {
@@ -38,7 +42,6 @@ a {
 
 ul { list-style: none; }
 
-/* ლოგოს და აქცენტების ფერი */
 .honey-text {
     color: var(--color-accent);
     font-weight: 800;
@@ -48,7 +51,7 @@ ul { list-style: none; }
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    border-radius: 50px; /* მომრგვალებული */
+    border-radius: 50px;
     font-family: var(--font-heading);
     font-weight: 600;
     text-transform: uppercase;
@@ -78,6 +81,24 @@ ul { list-style: none; }
 
 .btn-outline:hover {
     background-color: var(--color-text-main);
+    color: #fff;
+}
+
+/* პატარა ღილაკი ბარათებისთვის */
+.btn-outline-sm {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--color-text-main);
+    color: var(--color-text-main);
+}
+.btn-outline-sm:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
     color: #fff;
 }
 
@@ -130,7 +151,7 @@ ul { list-style: none; }
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, #FDF6E3 50%, #F4E8D1 50%); /* ორმაგი ფონის ეფექტი */
+    background: linear-gradient(to right, #FDF6E3 50%, #F4E8D1 50%);
 }
 
 .hero-content {
@@ -164,15 +185,12 @@ ul { list-style: none; }
     gap: 20px;
 }
 
-/* ფოტოს ჩარჩო */
 .hero-image-placeholder {
     flex: 1;
     height: 500px;
     background-color: #fff;
     border-radius: 20px 0 20px 0;
     box-shadow: 20px 20px 0px rgba(212, 163, 115, 0.2);
-    position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,4 +200,100 @@ ul { list-style: none; }
 .hero-image-placeholder span {
     color: var(--color-text-muted);
     font-weight: 600;
+}
+
+/* --- პროდუქციის სექცია --- */
+.products-section {
+    padding: 100px 0;
+    background-color: #fff; /* თეთრი ფონი ბარათებისთვის */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: var(--color-bg-main); /* კრემისფერი ბარათი */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    height: 250px;
+    background-color: #fcfcfc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+}
+
+.img-label {
+    color: #ccc;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 30px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--color-text-main);
+    margin-bottom: 10px;
+}
+
+.description {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 40px; /* რომ ყველა ბარათი თანაბარი იყოს */
+}
+
+.price {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* "მალე დაემატება" სტილი */
+.coming-soon {
+    opacity: 0.6;
+    pointer-events: none; /* რომ არ დაეჭიროს */
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    color: #888;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
