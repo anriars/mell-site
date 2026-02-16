@@ -1,133 +1,107 @@
-/* --- Mell - Rich Brand Style (Fixed) --- */
+/* --- Mell - Warm Honey Theme --- */
 :root {
-    --bg-creme: #FFF9ED;    
-    --honey-rich: #F0B159;  /* თბილი თაფლისფერი */
-    --honey-dark: #B7791F;  
-    --text-coffee: #3E2723; 
+    --bg-body: #FFFDF7;       /* ღია კრემისფერი */
+    --hero-bg-start: #F5DCA8; /* თბილი გარგარისფერი */
+    --hero-bg-end: #FFFDF7;   /* გადასვლა ღია ფერში */
+    --card-bg: #FFFFFF;       /* თეთრი */
+    --accent: #D98E04;        /* ოქროსფერი */
+    --text-main: #3E2723;     /* მუქი შოკოლადისფერი */
+    --text-light: #795548;    /* ღია ყავისფერი */
+    --font-head: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { 
-    font-family: 'Open Sans', sans-serif; 
-    background-color: var(--bg-creme); 
-    color: var(--text-coffee);
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-.container { width: 90%; max-width: 1100px; margin: 0 auto; }
-a { text-decoration: none; transition: 0.3s ease; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
 
-/* Header */
-.site-header { 
-    position: absolute; top: 0; width: 100%; 
-    padding: 30px 0; z-index: 100; 
-    background: transparent; 
+/* --- Header --- */
+.site-header {
+    background: rgba(245, 220, 168, 0.95);
+    padding: 20px 0;
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(62, 39, 35, 0.05);
 }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 50px; width: auto; }
-.main-nav ul { display: flex; gap: 30px; }
-.main-nav a { color: var(--text-coffee); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+.logo { font-family: var(--font-head); font-weight: 800; font-size: 26px; color: var(--text-main); }
+.main-nav ul { display: flex; gap: 25px; }
+.main-nav a { color: var(--text-main); font-weight: 700; font-size: 13px; text-transform: uppercase; }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero-section {
-    padding: 180px 0 100px;
-    background: linear-gradient(225deg, var(--honey-rich) 0%, #FFEFCF 45%, var(--bg-creme) 100%);
-    min-height: 80vh; 
-    display: flex; 
-    align-items: center;
-    border-bottom-left-radius: 80px;
+    padding: 160px 0 100px;
+    background: linear-gradient(135deg, var(--hero-bg-start) 0%, var(--hero-bg-end) 100%);
+    min-height: 85vh; 
+    display: flex; align-items: center;
+    border-bottom-right-radius: 80px;
 }
 .hero-content { display: flex; align-items: center; gap: 50px; }
-.hero-text { flex: 1.2; }
+.hero-text { flex: 1; }
 .hero-text h1 { 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 52px; 
-    font-weight: 900; 
+    font-family: var(--font-head); 
+    font-size: 48px; 
     line-height: 1.1; 
-    margin-bottom: 25px; 
+    margin-bottom: 24px; 
+    font-weight: 800;
 }
-.honey-text { color: var(--honey-dark); }
-.hero-text p { font-size: 18px; margin-bottom: 35px; opacity: 0.9; }
+.honey-text { color: var(--accent); }
+.hero-text p { color: var(--text-light); font-size: 18px; margin-bottom: 30px; }
 
 .hero-image-placeholder {
-    flex: 1; height: 450px; 
-    background: #fff; border-radius: 40px;
-    box-shadow: 20px 20px 60px rgba(183, 121, 31, 0.15);
-    display: flex; justify-content: center; align-items: center; 
-    border: 6px solid rgba(255,255,255,0.6);
+    flex: 1; height: 400px; 
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(217, 142, 4, 0.15);
+    display: flex; justify-content: center; align-items: center;
+    border: 4px solid #fff;
 }
-.placeholder-text { color: #eee; font-weight: 800; text-transform: uppercase; }
+.hero-image-placeholder span { color: #ccc; font-weight: 700; }
 
-/* --- Products Section (აღდგენილი და გასწორებული) --- */
-.products-section { 
-    padding: 100px 0; 
-    background-color: var(--bg-creme); 
-}
+/* --- Products Section (ეს ნაწილი იშლებოდა, ახლა გასწორებულია) --- */
+.products-section { padding: 80px 0; background-color: var(--bg-body); }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 36px; font-family: var(--font-head); color: var(--text-main); }
 
-.section-header { 
-    text-align: center; 
-    margin-bottom: 60px; 
-}
-
-.section-header h2 { 
-    font-size: 40px; 
-    font-family: 'Montserrat', sans-serif; 
-}
-
-/* აი ეს ნაწილი აკლდა ან არ მუშაობდა! */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .product-card {
-    background: #ffffff; 
-    border-radius: 25px; 
-    padding: 30px; 
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.05);
-    transition: 0.3s;
-}
-
-.product-card:hover { 
-    transform: translateY(-10px); 
-}
-
-.product-image { 
-    height: 200px; 
-    background: #FFFBF2; 
+    background: var(--card-bg); /* აი აქ სჭირდებოდა თეთრი ფონი */
     border-radius: 20px; 
-    margin-bottom: 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: #ddd; 
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(62, 39, 35, 0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s;
 }
+.product-card:hover { transform: translateY(-10px); }
 
-.product-info h3 { 
-    margin-bottom: 10px; 
-    font-size: 20px; 
-}
+.product-image { height: 240px; background: #fffbf2; display: flex; justify-content: center; align-items: center; }
+.img-label { color: #d0d0d0; font-weight: 600; }
 
-.price { 
-    font-size: 24px; 
-    font-weight: 800; 
-    color: var(--honey-rich); 
-    margin-bottom: 20px; 
-    display: block; 
-}
+.product-info { padding: 25px; text-align: center; }
+.product-info h3 { font-family: var(--font-head); margin-bottom: 10px; color: var(--text-main); font-weight: 700; }
+.description { font-size: 14px; color: var(--text-light); margin-bottom: 20px; min-height: 40px; }
+.price { display: block; font-size: 22px; font-weight: 800; color: var(--accent); margin-bottom: 20px; }
 
-/* Buttons */
-.btn { padding: 14px 30px; border-radius: 50px; font-weight: 800; display: inline-block; font-size: 12px; }
-.btn-dark { background: var(--text-coffee); color: #fff; }
-.btn-outline { 
-    border: 2px solid var(--text-coffee); 
-    color: var(--text-coffee); 
-    padding: 10px 25px; 
-    border-radius: 50px; 
-    font-weight: 800; 
-}
+/* --- Buttons --- */
+.btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 13px; }
+.btn-gold { background: var(--accent); color: #fff; }
+.btn-outline-sm { border: 2px solid var(--text-main); color: var(--text-main); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; }
+.btn-outline-sm:hover { background: var(--text-main); color: #fff; }
 
-footer { text-align: center; padding: 60px 0; opacity: 0.5; }
+.coming-soon { opacity: 0.6; pointer-events: none; filter: grayscale(1); }
+.badge { background: #f0f0f0; padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #999; }
+
+footer { text-align: center; padding: 40px 0; color: var(--text-light); font-size: 14px; margin-top: 50px;}
