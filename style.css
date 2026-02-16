@@ -1,23 +1,110 @@
-/* --- ნავიგაცია (Header) - გამჭვირვალე ვერსია --- */
+/* --- Mell - Rich & Sweet Honey Theme (Full Seamless Version) --- */
+:root {
+    /* ფერები */
+    --bg-body: #FFF6E0;       /* მსუყე ნაღებისფერი ფონი */
+    --hero-bg-dark: #F0C27B;  /* ღრმა თაფლისფერი (ზედა მარჯვენა კუთხე) */
+    --hero-bg-mid: #FFE8B6;   /* გადასვლის ფერი */
+    
+    --card-bg: #FFFFFF;       /* პროდუქტის ბარათების თეთრი ფონი */
+    --accent: #D69E2E;        /* ოქროსფერი/თაფლისფერი */
+    --text-main: #4A332A;     /* მუქი შოკოლადისფერი ტექსტისთვის */
+    --text-light: #8D6E63;    
+    
+    --font-head: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* საბაზისო პარამეტრები */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+a { 
+    text-decoration: none; 
+    transition: 0.3s ease; 
+}
+
+ul { list-style: none; }
+
+/* --- ნავიგაცია (Header) - აქ წაიშალა დაყოფის ხაზი --- */
 .site-header {
-    background: transparent; /* ფონი სრულიად გავაქრეთ */
-    padding: 25px 0;         /* ოდნავ გავზარდეთ დაშორება */
-    position: absolute;      /* 'fixed'-ის ნაცვლად 'absolute', რომ ფონს შეერწყას */
+    background: transparent; /* სრულიად გამჭვირვალე */
+    padding: 25px 0;
+    position: absolute;      /* ფონზე გადასაფარებლად */
     top: 0; 
     width: 100%; 
     z-index: 1000;
-    box-shadow: none;        /* აი ეს ჩრდილი ქმნიდა "ხაზის" ეფექტს, ახლა წავშალეთ */
+    box-shadow: none;        /* აქ გაქრა ის სქელი ხაზი */
 }
 
-/* რომ მენიუს ლინკები კარგად ჩანდეს გამჭვირვალე ფონზე */
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* ლოგოს მართვა */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 55px; /* ოპტიმალური ზომა */
+    width: auto;
+    object-fit: contain;
+}
+
+.main-nav ul { 
+    display: flex; 
+    gap: 30px; 
+}
+
 .main-nav a { 
     color: var(--text-main); 
     font-weight: 700; 
     font-size: 14px; 
     text-transform: uppercase; 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; 
 }
 
 .main-nav a:hover { 
     color: #fff; 
 }
+
+/* --- Hero Section (მთავარი გვერდი) --- */
+.hero-section {
+    padding: 180px 0 120px;
+    /* გრადიენტი, რომელიც ეკრანის ზედა კიდიდან იწყება */
+    background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
+    min-height: 85vh; 
+    display: flex; 
+    align-items: center;
+    border-bottom-left-radius: 80px; 
+}
+
+.hero-content { 
+    display: flex; 
+    align-items: center; 
+    gap: 60px; 
+}
+
+.hero-text { flex: 1; }
+
+.hero-text h1 { 
+    font-family:
