@@ -1,0 +1,15 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images"
+public_folder: "/images"
+collections:
+  - name: "products"
+    label: "პროდუქტები"
+    folder: "content/products"
+    create: true
+    fields:
+      - {label: "დასახელება", name: "title", widget: "string"}
+      - {label: "ფასი", name: "price", widget: "string"}
+      - {label: "აღწერა", name: "body", widget: "markdown"}
+      - {label: "სურათი", name: "image", widget: "image"}
