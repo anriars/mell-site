@@ -1,0 +1,185 @@
+/* --- Mell - Warm/Organic Theme (კრემისფერი დიზაინი) --- */
+:root {
+    --color-bg-main: #FDF6E3;      /* ძალიან ღია კრემისფერი */
+    --color-bg-secondary: #F4E8D1; /* ოდნავ მუქი კრემისფერი */
+    --color-accent: #D4A373;       /* კარამელის/თხილის ფერი */
+    --color-text-main: #3E2723;    /* მუქი ყავისფერი/შოკოლადისფერი */
+    --color-text-muted: #6D4C41;   /* ღია ყავისფერი ტექსტი */
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* --- ზოგადი სტილები --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    transition: all 0.3s ease;
+}
+
+ul { list-style: none; }
+
+/* ლოგოს და აქცენტების ფერი */
+.honey-text {
+    color: var(--color-accent);
+    font-weight: 800;
+}
+
+/* --- ღილაკები --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px; /* მომრგვალებული */
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-gold {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: 2px solid var(--color-accent);
+}
+
+.btn-gold:hover {
+    background-color: #bfa588;
+    border-color: #bfa588;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 2px solid var(--color-text-main);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-text-main);
+    color: #fff;
+}
+
+/* --- Header / ნავიგაცია --- */
+.site-header {
+    background-color: rgba(253, 246, 227, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-accent);
+}
+
+/* --- Hero სექცია --- */
+.hero-section {
+    padding: 180px 0 100px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #FDF6E3 50%, #F4E8D1 50%); /* ორმაგი ფონის ეფექტი */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--color-text-main);
+}
+
+.hero-text p {
+    color: var(--color-text-muted);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 480px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+/* ფოტოს ჩარჩო */
+.hero-image-placeholder {
+    flex: 1;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px 0 20px 0;
+    box-shadow: 20px 20px 0px rgba(212, 163, 115, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.hero-image-placeholder span {
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
