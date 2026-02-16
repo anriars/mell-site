@@ -96,6 +96,11 @@ ul { list-style: none; }
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
+{.logo-img {
+    height: 50px; /* აქედან მართე სიმაღლე */
+    width: auto;
+    display: block;
+}
 
 .product-card {
     background: var(--card-bg);
