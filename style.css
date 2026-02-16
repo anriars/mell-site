@@ -1,68 +1,119 @@
-/* --- Mell - Rich Honey Theme (Fixed) --- */
+/* --- Mell - Official Rich Honey Style --- */
 :root {
-    --bg-body: #FFF6E0;       /* ნაღებისფერი */
-    --hero-dark: #F0C27B;     /* თბილი თაფლისფერი */
-    --hero-light: #FFF6E0;    
-    --text-main: #4A332A;     /* მუქი ყავისფერი */
-    --accent: #D69E2E;        /* ოქროსფერი */
+    --bg-creme: #FFF9ED;    /* უფრო მსუყე ვანილისფერი */
+    --honey-rich: #F0B159;  /* გაჯერებული თაფლისფერი (ნიმუშის მიხედვით) */
+    --honey-dark: #B7791F;  /* მუქი ამბერი */
+    --text-coffee: #3E2723; /* მუქი ყავისფერი ტექსტისთვის */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-body); color: var(--text-main); }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-a { text-decoration: none; }
-ul { list-style: none; }
 
-/* Header - Seamless */
-.site-header {
-    position: absolute; top: 0; width: 100%; z-index: 100;
-    padding: 20px 0; background: transparent;
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    background-color: var(--bg-creme); 
+    color: var(--text-coffee);
+    line-height: 1.6;
+}
+
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+a { text-decoration: none; transition: 0.3s ease; }
+
+/* --- Seamless Header --- */
+.site-header { 
+    position: absolute; top: 0; width: 100%; 
+    padding: 30px 0; z-index: 100; 
+    background: transparent; 
 }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 55px; width: auto; }
-.main-nav ul { display: flex; gap: 25px; }
-.main-nav a { color: var(--text-main); font-weight: 700; font-size: 14px; text-transform: uppercase; }
+.logo-img { height: 50px; width: auto; }
+.main-nav ul { display: flex; gap: 30px; }
+.main-nav a { 
+    color: var(--text-coffee); 
+    font-weight: 700; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+.main-nav a:hover { color: var(--honey-dark); }
 
-/* Hero Section - "მსუყე" გრადიენტი */
+/* --- Hero Section - "Rich Apricot" Gradient --- */
 .hero-section {
     padding: 180px 0 100px;
-    background: linear-gradient(to bottom left, var(--hero-dark) 0%, #FFE8B6 50%, var(--hero-light) 100%);
-    min-height: 85vh; display: flex; align-items: center;
+    /* გრადიენტი ზედა მარჯვენა კუთხიდან, როგორც ნიმუშშია */
+    background: linear-gradient(225deg, var(--honey-rich) 0%, #FFEFCF 40%, var(--bg-creme) 100%);
+    min-height: 85vh; 
+    display: flex; 
+    align-items: center;
     border-bottom-left-radius: 80px;
 }
-.hero-content { display: flex; align-items: center; gap: 50px; }
-.hero-text { flex: 1; }
-.hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-.honey-text { color: #B7791F; }
+.hero-content { display: flex; align-items: center; gap: 60px; }
+.hero-text { flex: 1.2; }
+.hero-text h1 { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 54px; 
+    font-weight: 900; 
+    line-height: 1.1; 
+    margin-bottom: 25px; 
+    color: var(--text-coffee);
+}
+.honey-text { color: var(--honey-dark); }
+.hero-text p { font-size: 18px; margin-bottom: 35px; opacity: 0.9; max-width: 480px; }
 
 .hero-image-placeholder {
-    flex: 1; height: 450px; background: #fff; border-radius: 40px;
-    box-shadow: 20px 20px 60px rgba(214, 158, 46, 0.2);
-    display: flex; justify-content: center; align-items: center;
-    border: 6px solid rgba(255,255,255,0.5);
+    flex: 1; height: 450px; 
+    background: #fff; 
+    border-radius: 40px;
+    box-shadow: 25px 25px 60px rgba(183, 121, 31, 0.15);
+    display: flex; justify-content: center; align-items: center; 
+    border: 8px solid rgba(255,255,255,0.6);
 }
+.placeholder-text { color: #e0e0e0; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Products - აქ გასწორდა Grid */
-.products-section { padding: 100px 0; }
-.section-header { text-align: center; margin-bottom: 50px; }
-.section-header h2 { font-size: 40px; font-family: 'Montserrat', sans-serif; }
+/* --- Products Section (გასწორებული Grid) --- */
+.products-section { padding: 100px 0; background: var(--bg-creme); }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 42px; font-family: 'Montserrat', sans-serif; color: var(--text-coffee); }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
 }
+
 .product-card {
-    background: #fff; padding: 20px; border-radius: 25px; text-align: center;
-    box-shadow: 0 10px 30px rgba(74, 51, 42, 0.05);
+    background: #fff; 
+    border-radius: 25px; 
+    padding: 30px; 
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(62, 39, 35, 0.05);
+    transition: transform 0.3s ease;
 }
-.product-image { height: 200px; background: #FFF9ED; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #ddd; }
-.product-info h3 { margin-bottom: 10px; font-size: 20px; }
-.product-info p { font-size: 24px; font-weight: 800; color: var(--accent); margin-bottom: 20px; }
+.product-card:hover { transform: translateY(-10px); }
 
-/* Buttons */
-.btn { padding: 12px 30px; border-radius: 50px; font-weight: 700; display: inline-block; }
-.btn-dark { background: var(--text-main); color: #fff; }
-.btn-outline { border: 2px solid var(--text-main); color: var(--text-main); padding: 8px 25px; border-radius: 50px; font-weight: 700; }
+.product-image { 
+    height: 220px; 
+    background: #FFFBF2; 
+    border-radius: 20px; 
+    margin-bottom: 20px; 
+    display: flex; align-items: center; justify-content: center; 
+    color: #eee; font-weight: 700;
+}
+.product-info h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 10px; font-size: 20px; }
+.price { font-size: 26px; font-weight: 800; color: var(--honey-rich); margin-bottom: 20px; display: block; }
 
-footer { text-align: center; padding: 50px 0; opacity: 0.6; }
+/* --- Buttons --- */
+.btn { padding: 14px 35px; border-radius: 50px; font-weight: 800; display: inline-block; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+.btn-dark { background: var(--text-coffee); color: #fff; box-shadow: 0 10px 20px rgba(62, 39, 35, 0.2); }
+.btn-dark:hover { background: var(--honey-dark); transform: translateY(-2px); }
+
+.btn-outline { 
+    border: 2.5px solid var(--text-coffee); 
+    color: var(--text-coffee); 
+    padding: 10px 25px; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    font-size: 12px;
+}
+.btn-outline:hover { background: var(--text-coffee); color: #fff; }
+
+footer { text-align: center; padding: 60px 0; opacity: 0.5; font-weight: 600; }
