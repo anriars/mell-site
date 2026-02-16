@@ -1,299 +1,91 @@
-/* --- Mell - Warm/Organic Theme (სრული სტილები) --- */
+/* --- Mell - Premium Beige Theme --- */
 :root {
-    --color-bg-main: #FDF6E3;      /* ღია კრემისფერი */
-    --color-bg-secondary: #F4E8D1; /* ოდნავ მუქი კრემისფერი */
-    --color-accent: #D4A373;       /* კარამელის/თხილის ფერი */
-    --color-text-main: #3E2723;    /* მუქი ყავისფერი */
-    --color-text-muted: #6D4C41;   /* ღია ყავისფერი ტექსტი */
-    
-    --font-heading: 'Montserrat', sans-serif;
+    --bg-main: #FDF6E3;      /* ღია კრემისფერი */
+    --bg-card: #FFFFFF;      /* თეთრი ბარათებისთვის */
+    --accent: #D4A373;       /* კარამელი/ოქრო */
+    --text-main: #3E2723;    /* მუქი ყავისფერი */
+    --text-light: #6D4C41;   /* ღია ყავისფერი */
+    --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* --- ზოგადი სტილები --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* სქროლის დროს სირბილე */
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-bg-main);
-    color: var(--color-text-main);
+    background-color: var(--bg-main);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-text-main);
-    transition: all 0.3s ease;
-}
-
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+a { text-decoration: none; transition: 0.3s; }
 ul { list-style: none; }
 
-.honey-text {
-    color: var(--color-accent);
-    font-weight: 800;
-}
-
-/* --- ღილაკები --- */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.btn-gold {
-    background-color: var(--color-accent);
-    color: #fff;
-    border: 2px solid var(--color-accent);
-}
-
-.btn-gold:hover {
-    background-color: #bfa588;
-    border-color: #bfa588;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--color-text-main);
-    border: 2px solid var(--color-text-main);
-}
-
-.btn-outline:hover {
-    background-color: var(--color-text-main);
-    color: #fff;
-}
-
-/* პატარა ღილაკი ბარათებისთვის */
-.btn-outline-sm {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-family: var(--font-heading);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border: 1px solid var(--color-text-main);
-    color: var(--color-text-main);
-}
-.btn-outline-sm:hover {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff;
-}
-
-/* --- Header / ნავიგაცია --- */
+/* Header */
 .site-header {
-    background-color: rgba(253, 246, 227, 0.95);
+    background: rgba(253, 246, 227, 0.95);
     padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
+    position: fixed; top: 0; width: 100%; z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-head); font-weight: 800; font-size: 24px; color: var(--text-main); }
+.main-nav ul { display: flex; gap: 20px; }
+.main-nav a { color: var(--text-light); font-weight: 600; font-size: 14px; text-transform: uppercase; }
+.main-nav a:hover { color: var(--accent); }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-text-main);
-}
-
-.main-nav ul {
-    display: flex;
-    gap: 30px;
-}
-
-.main-nav a {
-    font-family: var(--font-heading);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-text-muted);
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    color: var(--color-accent);
-}
-
-/* --- Hero სექცია --- */
+/* Hero Section */
 .hero-section {
-    padding: 180px 0 100px;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to right, #FDF6E3 50%, #F4E8D1 50%);
+    padding: 160px 0 80px;
+    background: linear-gradient(to right, #FDF6E3 60%, #F4E8D1 40%);
+    min-height: 80vh; display: flex; align-items: center;
 }
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-text h1 {
-    font-family: var(--font-heading);
-    font-size: 56px;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: var(--color-text-main);
-}
-
-.hero-text p {
-    color: var(--color-text-muted);
-    font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 480px;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 20px;
-}
-
+.hero-content { display: flex; align-items: center; gap: 40px; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-family: var(--font-head); font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
+.honey-text { color: var(--accent); }
 .hero-image-placeholder {
-    flex: 1;
-    height: 500px;
-    background-color: #fff;
+    flex: 1; height: 400px; background: #fff;
     border-radius: 20px 0 20px 0;
-    box-shadow: 20px 20px 0px rgba(212, 163, 115, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
+    box-shadow: 20px 20px 0 rgba(212, 163, 115, 0.2);
+    display: flex; justify-content: center; align-items: center;
+    border: 1px solid #eee; color: #ccc; font-weight: bold;
 }
 
-.hero-image-placeholder span {
-    color: var(--color-text-muted);
-    font-weight: 600;
-}
-
-/* --- პროდუქციის სექცია --- */
-.products-section {
-    padding: 100px 0;
-    background-color: #fff; /* თეთრი ფონი ბარათებისთვის */
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-header h2 {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    color: var(--color-text-main);
-    margin-bottom: 10px;
-}
+/* Products */
+.products-section { padding: 80px 0; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 32px; font-family: var(--font-head); }
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
-
 .product-card {
-    background: var(--color-bg-main); /* კრემისფერი ბარათი */
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    background: var(--bg-card);
+    border-radius: 15px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
+.product-card:hover { transform: translateY(-10px); }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
+.product-image { height: 220px; background: #fafafa; display: flex; justify-content: center; align-items: center; }
+.img-label { color: #ccc; font-weight: 600; }
 
-.product-image {
-    height: 250px;
-    background-color: #fcfcfc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #eee;
-}
+.product-info { padding: 25px; text-align: center; }
+.product-info h3 { font-family: var(--font-head); margin-bottom: 10px; color: var(--text-main); }
+.description { font-size: 14px; color: var(--text-light); margin-bottom: 15px; min-height: 40px; }
+.price { display: block; font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 15px; }
 
-.img-label {
-    color: #ccc;
-    font-weight: 600;
-}
+/* Buttons & Badges */
+.btn { display: inline-block; padding: 10px 25px; border-radius: 50px; font-weight: 600; text-transform: uppercase; font-size: 13px; }
+.btn-gold { background: var(--accent); color: #fff; }
+.btn-outline-sm { border: 1px solid var(--text-main); color: var(--text-main); padding: 8px 20px; }
+.btn-outline-sm:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-.product-info {
-    padding: 30px;
-    text-align: center;
-}
+.coming-soon { opacity: 0.6; pointer-events: none; }
+.badge { background: #eee; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #888; }
 
-.product-info h3 {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    color: var(--color-text-main);
-    margin-bottom: 10px;
-}
-
-.description {
-    color: var(--color-text-muted);
-    font-size: 14px;
-    margin-bottom: 20px;
-    min-height: 40px; /* რომ ყველა ბარათი თანაბარი იყოს */
-}
-
-.price {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* "მალე დაემატება" სტილი */
-.coming-soon {
-    opacity: 0.6;
-    pointer-events: none; /* რომ არ დაეჭიროს */
-}
-
-.badge {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #e0e0e0;
-    color: #888;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
+footer { text-align: center; padding: 40px; color: var(--text-light); font-size: 14px; }
