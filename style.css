@@ -1,107 +1,120 @@
-/* --- Mell - Warm Honey Theme --- */
+/* --- Mell - Rich & Dark Honey Theme (Final Version) --- */
 :root {
-    --bg-body: #FFFDF7;       /* ღია კრემისფერი */
-    --hero-bg-start: #F5DCA8; /* თბილი გარგარისფერი */
-    --hero-bg-end: #FFFDF7;   /* გადასვლა ღია ფერში */
-    --card-bg: #FFFFFF;       /* თეთრი */
-    --accent: #D98E04;        /* ოქროსფერი */
-    --text-main: #3E2723;     /* მუქი შოკოლადისფერი */
-    --text-light: #795548;    /* ღია ყავისფერი */
+    /* ფერები - ყველაფერი გამუქდა, როგორც ნიმუშზეა */
+    --bg-body: #E0C097;       /* ფონი: მუქი გარგარისფერი/კრემი */
+    --hero-bg-dark: #D4A67E;  /* გრადიენტის ზედა ნაწილი: უფრო მუქი */
+    --hero-bg-mid: #E6CAA6;   /* გრადიენტის შუა ნაწილი */
+    
+    /* ბარათების ფონი აღარ არის თეთრი, ოდნავ კრემისფერია */
+    --card-bg: #F7F0E3;       
+    
+    /* ღილაკები - სურათზე ძალიან მუქი ყავისფერია */
+    --accent: #2D241E;        /* მუქი ყავისფერი (ღილაკებისთვის) */
+    --accent-hover: #4A3C33;  /* ოდნავ ღია ჰოვერზე */
+    
+    --text-main: #2D241E;     /* ტექსტიც მუქია */
+    --text-light: #5D4E46;    
+    
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
+/* საბაზისო პარამეტრები */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     font-family: var(--font-body);
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.6;
 }
-
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-a { text-decoration: none; transition: 0.3s; }
+a { text-decoration: none; transition: 0.3s ease; }
 ul { list-style: none; }
 
-/* --- Header --- */
+/* --- ნავიგაცია (Header) - გამჭვირვალე და მუქი --- */
 .site-header {
-    background: rgba(245, 220, 168, 0.95);
-    padding: 20px 0;
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    box-shadow: 0 2px 10px rgba(62, 39, 35, 0.05);
+    background: transparent; /* რჩება გამჭვირვალე */
+    padding: 25px 0;
+    position: absolute; top: 0; width: 100%; z-index: 1000;
+    box-shadow: none;
 }
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: var(--font-head); font-weight: 800; font-size: 26px; color: var(--text-main); }
-.main-nav ul { display: flex; gap: 25px; }
-.main-nav a { color: var(--text-main); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+.logo-link { display: flex; align-items: center; }
+.logo-img { height: 55px; width: auto; object-fit: contain; }
 
-/* --- Hero Section --- */
+.main-nav ul { display: flex; gap: 30px; }
+.main-nav a { 
+    color: var(--text-main); 
+    font-weight: 700; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+}
+.main-nav a:hover { color: #fff; } /* ჰოვერზე თეთრი ეფექტი */
+
+/* --- Hero Section (მთავარი გვერდი) --- */
 .hero-section {
-    padding: 160px 0 100px;
-    background: linear-gradient(135deg, var(--hero-bg-start) 0%, var(--hero-bg-end) 100%);
+    padding: 180px 0 120px;
+    /* გრადიენტი უფრო მუქ ფერებში */
+    background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
     min-height: 85vh; 
     display: flex; align-items: center;
-    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px; 
 }
-.hero-content { display: flex; align-items: center; gap: 50px; }
+.hero-content { display: flex; align-items: center; gap: 60px; }
 .hero-text { flex: 1; }
 .hero-text h1 { 
-    font-family: var(--font-head); 
-    font-size: 48px; 
-    line-height: 1.1; 
-    margin-bottom: 24px; 
-    font-weight: 800;
+    font-family: var(--font-head); font-size: 54px; line-height: 1.1; 
+    margin-bottom: 24px; font-weight: 800; color: var(--text-main);
 }
-.honey-text { color: var(--accent); }
-.hero-text p { color: var(--text-light); font-size: 18px; margin-bottom: 30px; }
+/* სიტყვა "თაფლი" ოდნავ უფრო ოქროსფრად რომ დარჩეს */
+.honey-text { color: #8C6239; }
 
+.hero-text p { 
+    color: var(--text-main); font-size: 18px; margin-bottom: 35px; 
+    opacity: 0.9; font-weight: 500;
+}
+/* სურათის ჩარჩოც ოდნავ გამუქდა */
 .hero-image-placeholder {
-    flex: 1; height: 400px; 
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(217, 142, 4, 0.15);
+    flex: 1; height: 450px; 
+    background: #FDF8F0; /* თეთრის ნაცვლად ძალიან ღია კრემი */
+    border-radius: 40px;
+    box-shadow: 20px 20px 60px rgba(45, 36, 30, 0.2); /* ჩრდილიც მუქია */
     display: flex; justify-content: center; align-items: center;
-    border: 4px solid #fff;
+    border: 6px solid rgba(255,255,255,0.3);
 }
-.hero-image-placeholder span { color: #ccc; font-weight: 700; }
 
-/* --- Products Section (ეს ნაწილი იშლებოდა, ახლა გასწორებულია) --- */
-.products-section { padding: 80px 0; background-color: var(--bg-body); }
-.section-header { text-align: center; margin-bottom: 50px; }
-.section-header h2 { font-size: 36px; font-family: var(--font-head); color: var(--text-main); }
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+/* --- პროდუქციის სექცია --- */
+.products-section { padding: 100px 0; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 42px; font-family: var(--font-head); color: var(--text-main); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 
 .product-card {
-    background: var(--card-bg); /* აი აქ სჭირდებოდა თეთრი ფონი */
-    border-radius: 20px; 
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(62, 39, 35, 0.03);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: transform 0.3s;
+    background: var(--card-bg); /* ბარათის ფონი */
+    border-radius: 24px; overflow: hidden;
+    box-shadow: 0 15px 35px rgba(45, 36, 30, 0.1); 
+    transition: transform 0.3s ease;
 }
-.product-card:hover { transform: translateY(-10px); }
+.product-card:hover { transform: translateY(-12px); }
+.product-image { height: 260px; background: #FDF8F0; display: flex; justify-content: center; align-items: center; }
+.product-info { padding: 30px; text-align: center; }
+.product-info h3 { font-family: var(--font-head); color: var(--text-main); font-weight: 700; font-size: 22px; }
+.price { display: block; font-size: 26px; font-weight: 800; color: #8C6239; margin: 20px 0;}
 
-.product-image { height: 240px; background: #fffbf2; display: flex; justify-content: center; align-items: center; }
-.img-label { color: #d0d0d0; font-weight: 600; }
-
-.product-info { padding: 25px; text-align: center; }
-.product-info h3 { font-family: var(--font-head); margin-bottom: 10px; color: var(--text-main); font-weight: 700; }
-.description { font-size: 14px; color: var(--text-light); margin-bottom: 20px; min-height: 40px; }
-.price { display: block; font-size: 22px; font-weight: 800; color: var(--accent); margin-bottom: 20px; }
-
-/* --- Buttons --- */
-.btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 13px; }
-.btn-gold { background: var(--accent); color: #fff; }
-.btn-outline-sm { border: 2px solid var(--text-main); color: var(--text-main); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; }
+/* --- ღილაკები (მუქი ყავისფერი, როგორც ნიმუშზე) --- */
+.btn { display: inline-block; padding: 14px 34px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 13px; }
+.btn-gold { 
+    background: var(--accent); /* მუქი ყავისფერი */
+    color: #fff; 
+    box-shadow: 0 10px 20px rgba(45, 36, 30, 0.3);
+}
+.btn-gold:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.btn-outline-sm { 
+    border: 2px solid var(--text-main); 
+    color: var(--text-main); 
+    padding: 10px 24px; 
+}
 .btn-outline-sm:hover { background: var(--text-main); color: #fff; }
 
-.coming-soon { opacity: 0.6; pointer-events: none; filter: grayscale(1); }
-.badge { background: #f0f0f0; padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #999; }
-
-footer { text-align: center; padding: 40px 0; color: var(--text-light); font-size: 14px; margin-top: 50px;}
+footer { text-align: center; padding: 60px 0; font-size: 14px; opacity: 0.8; }
