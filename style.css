@@ -1,120 +1,80 @@
-/* --- Mell - Rich & Dark Honey Theme (Final Version) --- */
+/* --- Mell - Rich & Dark Honey Theme (Responsive Final) --- */
 :root {
-    /* ფერები - ყველაფერი გამუქდა, როგორც ნიმუშზეა */
-    --bg-body: #E0C097;       /* ფონი: მუქი გარგარისფერი/კრემი */
-    --hero-bg-dark: #D4A67E;  /* გრადიენტის ზედა ნაწილი: უფრო მუქი */
-    --hero-bg-mid: #E6CAA6;   /* გრადიენტის შუა ნაწილი */
-    
-    /* ბარათების ფონი აღარ არის თეთრი, ოდნავ კრემისფერია */
-    --card-bg: #F7F0E3;       
-    
-    /* ღილაკები - სურათზე ძალიან მუქი ყავისფერია */
-    --accent: #2D241E;        /* მუქი ყავისფერი (ღილაკებისთვის) */
-    --accent-hover: #4A3C33;  /* ოდნავ ღია ჰოვერზე */
-    
-    --text-main: #2D241E;     /* ტექსტიც მუქია */
-    --text-light: #5D4E46;    
-    
+    --bg-body: #E0C097;
+    --hero-bg-dark: #D4A67E;
+    --hero-bg-mid: #E6CAA6;
+    --card-bg: #F7F0E3;
+    --accent: #2D241E;
+    --accent-hover: #4A3C33;
+    --text-main: #2D241E;
+    --text-light: #5D4E46;
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* საბაზისო პარამეტრები */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-    font-family: var(--font-body);
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-a { text-decoration: none; transition: 0.3s ease; }
-ul { list-style: none; }
+/* ===== Base ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font-body); background-color: var(--bg-body); color: var(--text-main); line-height:1.6; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
+a { text-decoration:none; transition:0.3s ease; }
+ul { list-style:none; }
 
-/* --- ნავიგაცია (Header) - გამჭვირვალე და მუქი --- */
-.site-header {
-    background: transparent; /* რჩება გამჭვირვალე */
-    padding: 25px 0;
-    position: absolute; top: 0; width: 100%; z-index: 1000;
-    box-shadow: none;
-}
-.header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-link { display: flex; align-items: center; }
-.logo-img { height: 55px; width: auto; object-fit: contain; }
+/* ===== Header ===== */
+.site-header { background: transparent; padding:25px 0; position:absolute; top:0; width:100%; z-index:1000; }
+.header-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+.logo { font-family: var(--font-head); font-size:28px; font-weight:800; color:var(--text-main); }
+.main-nav ul { display:flex; gap:20px; flex-wrap:wrap; }
+.main-nav a { color:var(--text-main); font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; }
+.main-nav a:hover { color:#fff; }
+.header-actions { margin-top:10px; }
 
-.main-nav ul { display: flex; gap: 30px; }
-.main-nav a { 
-    color: var(--text-main); 
-    font-weight: 700; 
-    font-size: 14px; 
-    text-transform: uppercase; 
-    letter-spacing: 0.5px; 
-}
-.main-nav a:hover { color: #fff; } /* ჰოვერზე თეთრი ეფექტი */
-
-/* --- Hero Section (მთავარი გვერდი) --- */
+/* ===== Hero Section ===== */
 .hero-section {
-    padding: 180px 0 120px;
-    /* გრადიენტი უფრო მუქ ფერებში */
+    padding:120px 0 60px;
     background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
-    min-height: 85vh; 
-    display: flex; align-items: center;
-    border-bottom-left-radius: 80px; 
+    min-height:85vh;
+    display:flex; flex-direction:column; align-items:center;
+    border-bottom-left-radius:80px;
 }
-.hero-content { display: flex; align-items: center; gap: 60px; }
-.hero-text { flex: 1; }
-.hero-text h1 { 
-    font-family: var(--font-head); font-size: 54px; line-height: 1.1; 
-    margin-bottom: 24px; font-weight: 800; color: var(--text-main);
-}
-/* სიტყვა "თაფლი" ოდნავ უფრო ოქროსფრად რომ დარჩეს */
-.honey-text { color: #8C6239; }
+.hero-content { display:flex; flex-direction:column; align-items:center; gap:40px; width:100%; }
+.hero-text { text-align:center; }
+.hero-text h1 { font-family: var(--font-head); font-size:36px; line-height:1.2; margin-bottom:20px; font-weight:800; color:var(--text-main); }
+.honey-text { color:#8C6239; }
+.hero-text p { font-size:16px; opacity:0.9; margin-bottom:25px; font-weight:500; color:var(--text-main); }
+.hero-btns a { margin-top:10px; }
+.hero-image-placeholder { width:100%; height:250px; background:#FDF8F0; border-radius:40px; box-shadow:20px 20px 60px rgba(45,36,30,0.2); display:flex; justify-content:center; align-items:center; border:6px solid rgba(255,255,255,0.3); font-weight:600; }
 
-.hero-text p { 
-    color: var(--text-main); font-size: 18px; margin-bottom: 35px; 
-    opacity: 0.9; font-weight: 500;
-}
-/* სურათის ჩარჩოც ოდნავ გამუქდა */
-.hero-image-placeholder {
-    flex: 1; height: 450px; 
-    background: #FDF8F0; /* თეთრის ნაცვლად ძალიან ღია კრემი */
-    border-radius: 40px;
-    box-shadow: 20px 20px 60px rgba(45, 36, 30, 0.2); /* ჩრდილიც მუქია */
-    display: flex; justify-content: center; align-items: center;
-    border: 6px solid rgba(255,255,255,0.3);
-}
+/* ===== Products Section ===== */
+.products-section { padding:80px 0; }
+.section-header { text-align:center; margin-bottom:40px; }
+.section-header h2 { font-size:32px; font-family: var(--font-head); color:var(--text-main); }
+.products-grid { display:grid; grid-template-columns:1fr; gap:25px; }
+.product-card { background: var(--card-bg); border-radius:24px; overflow:hidden; box-shadow:0 15px 35px rgba(45,36,30,0.1); transition:transform 0.3s ease; }
+.product-card:hover { transform:translateY(-10px); }
+.product-image { height:200px; background:#FDF8F0; display:flex; justify-content:center; align-items:center; font-weight:600; }
+.product-info { padding:20px; text-align:center; }
+.product-info h3 { font-family: var(--font-head); color:var(--text-main); font-weight:700; font-size:20px; }
+.price { display:block; font-size:24px; font-weight:800; color:#8C6239; margin:15px 0; }
 
-/* --- პროდუქციის სექცია --- */
-.products-section { padding: 100px 0; }
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-header h2 { font-size: 42px; font-family: var(--font-head); color: var(--text-main); }
-.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+/* ===== Buttons ===== */
+.btn { display:inline-block; padding:12px 28px; border-radius:50px; font-weight:700; text-transform:uppercase; font-size:13px; }
+.btn-gold { background: var(--accent); color:#fff; box-shadow:0 10px 20px rgba(45,36,30,0.3); }
+.btn-gold:hover { background: var(--accent-hover); transform:translateY(-2px); }
+.btn-outline-sm { border:2px solid var(--text-main); color:var(--text-main); padding:10px 24px; }
+.btn-outline-sm:hover { background:var(--text-main); color:#fff; }
 
-.product-card {
-    background: var(--card-bg); /* ბარათის ფონი */
-    border-radius: 24px; overflow: hidden;
-    box-shadow: 0 15px 35px rgba(45, 36, 30, 0.1); 
-    transition: transform 0.3s ease;
-}
-.product-card:hover { transform: translateY(-12px); }
-.product-image { height: 260px; background: #FDF8F0; display: flex; justify-content: center; align-items: center; }
-.product-info { padding: 30px; text-align: center; }
-.product-info h3 { font-family: var(--font-head); color: var(--text-main); font-weight: 700; font-size: 22px; }
-.price { display: block; font-size: 26px; font-weight: 800; color: #8C6239; margin: 20px 0;}
+/* ===== Footer ===== */
+footer { text-align:center; padding:40px 0; font-size:14px; opacity:0.8; }
 
-/* --- ღილაკები (მუქი ყავისფერი, როგორც ნიმუშზე) --- */
-.btn { display: inline-block; padding: 14px 34px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 13px; }
-.btn-gold { 
-    background: var(--accent); /* მუქი ყავისფერი */
-    color: #fff; 
-    box-shadow: 0 10px 20px rgba(45, 36, 30, 0.3);
+/* ===== Media Queries ===== */
+@media (min-width:768px){
+    .hero-content { flex-direction:row; align-items:center; gap:60px; }
+    .hero-text { text-align:left; flex:1; }
+    .hero-image-placeholder { flex:1; height:350px; }
+    .products-grid { grid-template-columns:repeat(2,1fr); gap:30px; }
+    .header-actions { margin-top:0; }
 }
-.btn-gold:hover { background: var(--accent-hover); transform: translateY(-2px); }
-.btn-outline-sm { 
-    border: 2px solid var(--text-main); 
-    color: var(--text-main); 
-    padding: 10px 24px; 
+@media (min-width:1024px){
+    .hero-text h1 { font-size:48px; }
+    .products-grid { grid-template-columns:repeat(3,1fr); gap:40px; }
 }
-.btn-outline-sm:hover { background: var(--text-main); color: #fff; }
-
-footer { text-align: center; padding: 60px 0; font-size: 14px; opacity: 0.8; }
