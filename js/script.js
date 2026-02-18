@@ -1,20 +1,46 @@
-function toggleMenu() {
-    document.querySelector('.main-nav').classList.toggle('active');
-}
+// Hamburger menu auto-close on click
+const menuLinks = document.querySelectorAll('.main-nav a');
+const hamburgerCheckbox = document.getElementById('hamburger-toggle');
 
-document.addEventListener('click', function(event) {
-    const nav = document.querySelector('.main-nav');
-    const hamburger = document.querySelector('.hamburger');
-    if(nav.classList.contains('active') &&
-       !nav.contains(event.target) &&
-       !hamburger.contains(event.target)) {
-        nav.classList.remove('active');
-    }
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (hamburgerCheckbox) hamburgerCheckbox.checked = false;
+  });
 });
 
-function orderProduct(name) {
-    const phone = "995555555555";
-    const message = `მინდა შეკვეთა: ${name}`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-}
+// Load products from JSON
+fetch('admin/products.json')
+  .then(res => res.json())
+  .then(data => {
+    const productsDiv = document.getElementById('products');
+    data.forEach(p => {
+      const card = document.createElement('div');
+      card.classList.add('product-card');
+      card.innerHTML = `
+        <div class="product-image"><img src="images/${p.image}" alt="${p.name}"></div>
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <div class="price">${p.price} ₾</div>
+        </div>
+      `;
+      productsDiv.appendChild(card);
+    });
+  });
+
+// Load blog posts from JSON
+fetch('admin/blog.json')
+  .then(res => res.json())
+  .then(data => {
+    const blogDiv = document.getElementById('blog-posts');
+    data.forEach(post => {
+      const card = document.createElement('div');
+      card.classList.add('blog-card');
+      card.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <small>${post.date}</small>
+      `;
+      blogDiv.appendChild(card);
+    });
+  });
