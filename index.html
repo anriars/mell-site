@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mell - პრემიუმ თაფლი</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="shortcut icon" href="/favicon.png">
@@ -23,7 +18,7 @@
             <img src="images/logo.png" alt="Mell" height="70">
         </div>
 
-        <!-- Hamburger for mobile -->
+        <!-- Hamburger toggle for mobile -->
         <input type="checkbox" id="hamburger-toggle">
         <label for="hamburger-toggle" class="hamburger">
             <span></span>
@@ -102,26 +97,12 @@
     </div>
 </section>
 
-<section id="blog" class="blog-section">
-    <div class="container">
-        <h2>ბლოგი</h2>
-        <p>აქ შეგიძლიათ განათავსოთ საინტერესო სტატიები თაფლსა და პროდუქტებზე.</p>
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>კონტაქტი</h2>
-        <p>დაგვიკავშირდით WhatsApp–ით ან ელექტრონულად.</p>
-    </div>
-</section>
-
 <footer>
     <p>&copy; 2026 Mell. ყველა უფლება დაცულია.</p>
 </footer>
 
 <script>
-    // Hamburger auto-close
+    // Hamburger auto-close for mobile
     const menuLinks = document.querySelectorAll('.main-nav a');
     const hamburgerCheckbox = document.getElementById('hamburger-toggle');
     menuLinks.forEach(link => {
@@ -130,6 +111,5 @@
         });
     });
 </script>
-
 </body>
 </html>
