@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mell - პრემიუმ თაფლი</title>
 
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -35,13 +38,14 @@ body {
     margin:0 auto;
 }
 
-a { text-decoration:none; transition:0.3s ease; }
+a { text-decoration:none; }
 ul { list-style:none; }
 
-/* ===== Header ===== */
+/* ================= HEADER ================= */
+
 .site-header {
     background: transparent;
-    padding:20px 0;
+    padding:15px 0;
     position:absolute;
     top:0;
     width:100%;
@@ -54,14 +58,14 @@ ul { list-style:none; }
     align-items:center;
 }
 
-/* ===== Logo ===== */
+/* LOGO FIXED SIZE */
 .logo img {
-    height:55px;
+    height:95px;     /* აქ გაზრდილია */
     width:auto;
     display:block;
 }
 
-/* ===== Navigation ===== */
+/* NAV */
 .main-nav ul {
     display:flex;
     gap:25px;
@@ -74,9 +78,7 @@ ul { list-style:none; }
     text-transform:uppercase;
 }
 
-.main-nav a:hover { color:#fff; }
-
-/* ===== Hamburger ===== */
+/* HAMBURGER */
 .hamburger {
     display:none;
     width:28px;
@@ -94,16 +96,16 @@ ul { list-style:none; }
     border-radius:3px;
     position:absolute;
     left:0;
-    transition:0.3s;
 }
 
 .hamburger span:nth-child(1){ top:0; }
 .hamburger span:nth-child(2){ top:9px; }
 .hamburger span:nth-child(3){ top:18px; }
 
-/* ===== Hero ===== */
+/* ================= HERO ================= */
+
 .hero-section {
-    padding:140px 0 80px;
+    padding:180px 0 100px; /* ლოგოს გაზრდის გამო padding გაიზარდა */
     background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
     border-bottom-left-radius:80px;
 }
@@ -128,17 +130,8 @@ ul { list-style:none; }
 
 .honey-text { color:#8C6239; }
 
-.hero-image-placeholder {
-    width:100%;
-    height:250px;
-    background:#FDF8F0;
-    border-radius:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+/* ================= PRODUCTS ================= */
 
-/* ===== Products ===== */
 .products-section { padding:80px 0; }
 
 .products-grid {
@@ -150,7 +143,6 @@ ul { list-style:none; }
 .product-card {
     background:var(--card-bg);
     border-radius:24px;
-    overflow:hidden;
     padding:25px;
     text-align:center;
 }
@@ -168,25 +160,24 @@ ul { list-style:none; }
     border-radius:50px;
     font-weight:700;
     font-size:13px;
-}
-
-.btn-outline-sm {
     border:2px solid var(--text-main);
     color:var(--text-main);
 }
 
-.btn-outline-sm:hover {
+.btn:hover {
     background:var(--text-main);
     color:#fff;
 }
 
-/* ===== Footer ===== */
+/* ================= FOOTER ================= */
+
 footer {
     text-align:center;
     padding:40px 0;
 }
 
-/* ===== Responsive ===== */
+/* ================= RESPONSIVE ================= */
+
 @media (min-width:768px){
     .hero-content { flex-direction:row; }
     .products-grid { grid-template-columns:repeat(3,1fr); }
@@ -203,7 +194,7 @@ footer {
         width:70%;
         height:100%;
         background:var(--bg-body);
-        padding:100px 20px;
+        padding:120px 20px;
         transition:left 0.3s ease;
     }
 
@@ -223,7 +214,6 @@ footer {
 <div class="container header-content">
 
     <div class="logo">
-        <!-- აქ ჩასვი შენი ატვირთული ლოგოს ფაილის სახელი -->
         <img src="logo.png" alt="Mell Logo">
     </div>
 
@@ -252,10 +242,6 @@ footer {
         <p>ბუნებრივი გემო და ხარისხი ერთ ქილაში.</p>
     </div>
 
-    <div class="hero-image-placeholder">
-        პროდუქტის ფოტო
-    </div>
-
 </div>
 </section>
 
@@ -265,19 +251,19 @@ footer {
     <div class="product-card">
         <h3>თაფლი თხილით</h3>
         <div class="price">25 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი თხილით')" class="btn btn-outline-sm">შეკვეთა</a>
+        <a href="#" onclick="orderProduct('თაფლი თხილით')" class="btn">შეკვეთა</a>
     </div>
 
     <div class="product-card">
         <h3>თაფლი ნიგვზით</h3>
         <div class="price">27 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი ნიგვზით')" class="btn btn-outline-sm">შეკვეთა</a>
+        <a href="#" onclick="orderProduct('თაფლი ნიგვზით')" class="btn">შეკვეთა</a>
     </div>
 
     <div class="product-card">
         <h3>თაფლი ნუშით</h3>
         <div class="price">30 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი ნუშით')" class="btn btn-outline-sm">შეკვეთა</a>
+        <a href="#" onclick="orderProduct('თაფლი ნუშით')" class="btn">შეკვეთა</a>
     </div>
 
 </div>
@@ -299,7 +285,6 @@ function toggleMenu() {
     document.querySelector('.main-nav').classList.toggle('active');
 }
 
-/* ავტომატური დაკეცვა ყველგან დაჭერით */
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
