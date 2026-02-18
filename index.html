@@ -7,18 +7,22 @@
 
 <!-- FAVICON -->
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --bg-body: #E0C097;
-    --hero-bg-dark: #D4A67E;
-    --hero-bg-mid: #E6CAA6;
-    --card-bg: #F7F0E3;
-    --accent: #2D241E;
-    --accent-hover: #4A3C33;
-    --text-main: #2D241E;
+    /* ფერები */
+    --bg-body: #DDB987;
+    --hero-bg-dark: #C58F5C;
+    --hero-bg-mid: #E1B97C;
+    --card-bg: #F9E7D1;
+    --accent: #5A3A1B;
+    --accent-hover: #8C5C33;
+    --text-main: #3B2A1F;
+    --text-light: #7A5C4A;
+
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
@@ -38,7 +42,7 @@ body {
     margin:0 auto;
 }
 
-a { text-decoration:none; }
+a { text-decoration:none; transition:0.3s ease; }
 ul { list-style:none; }
 
 /* ================= HEADER ================= */
@@ -58,14 +62,14 @@ ul { list-style:none; }
     align-items:center;
 }
 
-/* LOGO FIXED SIZE */
+/* LOGO */
 .logo img {
     height:95px;
     width:auto;
     display:block;
+    cursor:pointer;
 }
 
-/* NAV */
 .main-nav ul {
     display:flex;
     gap:25px;
@@ -77,6 +81,8 @@ ul { list-style:none; }
     font-size:14px;
     text-transform:uppercase;
 }
+
+.main-nav a:hover { color: var(--accent); }
 
 /* HAMBURGER */
 .hamburger {
@@ -108,16 +114,6 @@ ul { list-style:none; }
     padding:180px 0 100px;
     background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
     border-bottom-left-radius:80px;
-}
-
-.hero-content {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:40px;
-}
-
-.hero-text {
     text-align:center;
 }
 
@@ -145,6 +141,17 @@ ul { list-style:none; }
     border-radius:24px;
     padding:25px;
     text-align:center;
+    box-shadow:0 10px 25px rgba(59,42,31,0.15);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover { transform: translateY(-8px); }
+
+.product-info h3 {
+    font-family: var(--font-head);
+    color: var(--text-main);
+    font-weight:700;
+    font-size:20px;
 }
 
 .price {
@@ -169,18 +176,35 @@ ul { list-style:none; }
     color:#fff;
 }
 
+/* ================= BLOG ================= */
+
+.blog-section { padding:80px 0; }
+.blog-section h2 { text-align:center; font-family: var(--font-head); margin-bottom:50px; font-size:36px; }
+.blog-grid { display:grid; grid-template-columns:1fr; gap:25px; }
+.blog-card {
+    background:var(--card-bg);
+    border-radius:24px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(59,42,31,0.15);
+    transition: transform 0.3s ease;
+}
+.blog-card:hover { transform: translateY(-8px); }
+.blog-card h3 { font-family: var(--font-head); font-size:20px; margin-bottom:10px; }
+
 /* ================= FOOTER ================= */
 
 footer {
     text-align:center;
     padding:40px 0;
+    font-size:14px;
+    color: var(--text-light);
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (min-width:768px){
-    .hero-content { flex-direction:row; }
     .products-grid { grid-template-columns:repeat(3,1fr); }
+    .blog-grid { grid-template-columns:repeat(3,1fr); }
 }
 
 @media (max-width:767px){
@@ -197,11 +221,7 @@ footer {
         transition:left 0.3s ease;
     }
 
-    .main-nav ul {
-        flex-direction:column;
-        gap:20px;
-    }
-
+    .main-nav ul { flex-direction:column; gap:20px; }
     .main-nav.active { left:0; }
 }
 </style>
@@ -212,14 +232,18 @@ footer {
 <header class="site-header">
 <div class="container header-content">
 
+    <!-- LOGO LINK TO HOMEPAGE -->
     <div class="logo">
-        <img src="images/logo.png" alt="Mell Logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Mell Logo">
+        </a>
     </div>
 
     <nav class="main-nav">
         <ul>
             <li><a href="#home">მთავარი</a></li>
             <li><a href="#products">პროდუქცია</a></li>
+            <li><a href="#blog">ბლოგი</a></li>
             <li><a href="#contact">კონტაქტი</a></li>
         </ul>
     </nav>
@@ -234,13 +258,9 @@ footer {
 </header>
 
 <section id="home" class="hero-section">
-<div class="container hero-content">
-
-    <div class="hero-text">
-        <h1>პრემიუმ <span class="honey-text">თაფლი</span> თხილეულით</h1>
-        <p>ბუნებრივი გემო და ხარისხი ერთ ქილაში.</p>
-    </div>
-
+<div class="container hero-text">
+    <h1>პრემიუმ <span class="honey-text">თაფლი</span> თხილეულით</h1>
+    <p>ბუნებრივი გემო და ხარისხი ერთ ქილაში.</p>
 </div>
 </section>
 
@@ -268,6 +288,31 @@ footer {
 </div>
 </section>
 
+<section id="blog" class="blog-section">
+<h2>ბლოგი</h2>
+<div class="container blog-grid">
+
+    <div class="blog-card">
+        <h3>სიხარული ბუნებიდან</h3>
+        <p>ჩვენი თაფლი ბუნების სიწმინდესთან ერთად გთავაზობთ.</p>
+        <a href="#" class="btn">მეტი</a>
+    </div>
+
+    <div class="blog-card">
+        <h3>თხილის არჩევა</h3>
+        <p>როგორ ავირჩიოთ იდეალური თხილი ჩვენი პროდუქტისთვის.</p>
+        <a href="#" class="btn">მეტი</a>
+    </div>
+
+    <div class="blog-card">
+        <h3>თაფლის საიდუმლო</h3>
+        <p>ბუნებრივი გემო და ხარისხი ჩვენი ტრადიციების საფუძველზე.</p>
+        <a href="#" class="btn">მეტი</a>
+    </div>
+
+</div>
+</section>
+
 <footer>
 <p>&copy; 2026 Mell</p>
 </footer>
@@ -284,20 +329,13 @@ function toggleMenu() {
     document.querySelector('.main-nav').classList.toggle('active');
 }
 
-// მენიუს ავტომატური დახურვა ლინკზე და გარეთ კლიკზე
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
 
-    // დახურვა როცა კლიკი ხდება ჰამბურგერ/მენიუს გარეთ
     if(nav.classList.contains('active') &&
        !nav.contains(event.target) &&
        !hamburger.contains(event.target)) {
-        nav.classList.remove('active');
-    }
-
-    // დახურვა როცა კლიკი ხდება ნავიგაციის ლინკზე
-    if(event.target.closest('.main-nav a')) {
         nav.classList.remove('active');
     }
 });
