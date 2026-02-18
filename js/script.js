@@ -7,20 +7,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const navLinks = document.querySelectorAll('.main-nav a');
 
-    // 1️⃣ ჰამბურგერის გახსნა / დახურვა
+    // გახსნა / დახურვა
     hamburger.addEventListener('click', function (e) {
         e.stopPropagation();
         nav.classList.toggle('active');
+        hamburger.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
     });
 
-    // 2️⃣ ლინკზე დაჭერისას დახურვა
+    // ლინკზე დაჭერისას დახურვა
     navLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             nav.classList.remove('active');
+            hamburger.classList.remove('open');
+            document.body.classList.remove('menu-open');
         });
     });
 
-    // 3️⃣ ცარიელ ადგილას დაჭერისას დახურვა
+    // ცარიელ ადგილას დაჭერისას დახურვა
     document.addEventListener('click', function (e) {
         if (
             nav.classList.contains('active') &&
@@ -28,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
             !hamburger.contains(e.target)
         ) {
             nav.classList.remove('active');
+            hamburger.classList.remove('open');
+            document.body.classList.remove('menu-open');
         }
     });
 
