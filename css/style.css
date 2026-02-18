@@ -44,8 +44,6 @@ ul { list-style:none; }
 .btn-outline-sm { border:2px solid var(--text-main); color: var(--text-main); padding:8px 16px; border-radius:30px; display:inline-block; margin-top:5px; }
 .btn-outline-sm:hover { background: var(--text-main); color:#fff; }
 
-.blog-section, .contact-section { padding:60px 0; text-align:center; }
-
 footer { text-align:center; padding:40px 0; font-size:14px; opacity:0.8; }
 
 /* Hamburger mobile */
