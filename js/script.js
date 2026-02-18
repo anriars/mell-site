@@ -1,24 +1,38 @@
-// ჰამბურგერ მენიუს ლოგიკა
-const hamburger = document.getElementById('hamburger');
-const nav = document.querySelector('.main-nav');
-const navLinks = document.querySelectorAll('.main-nav a');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.main-nav');
+    const navLinks = document.querySelectorAll('.main-nav a');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        nav.classList.toggle('active');
+    // 1. ჰამბურგერზე დაჭერა (გახსნა/დახურვა)
+    if (hamburger) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // ხელს უშლის, რომ კლიკი "გაიპაროს"
+            nav.classList.toggle('active');
+        });
+    }
+
+    // 2. მენიუს დახურვა ლინკზე დაჭერისას
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
     });
-}
 
-// მენიუს დახურვა ლინკზე დაჭერისას
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
+    // 3. მენიუს დახურვა გვერდზე (ცარიელ ადგილას) დაჭერისას
+    document.addEventListener('click', (e) => {
+        // თუ მენიუ ღიაა...
+        if (nav.classList.contains('active')) {
+            // ...და კლიკი არც მენიუშია და არც ღილაკზე
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        }
     });
 });
 
-// WhatsApp-ზე შეკვეთის ფუნქცია
+// WhatsApp შეკვეთა
 function orderProduct(name) {
-    const phone = "995555555555"; // აქ ჩაწერე შენი ნომერი
+    const phone = "995555555555"; 
     const message = `გამარჯობა, მინდა შეკვეთა: ${name}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
