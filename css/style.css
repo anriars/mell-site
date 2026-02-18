@@ -1,17 +1,22 @@
-:root {
-    --bg-body: #DDB987;
-    --hero-bg-dark: #C58F5C;
-    --hero-bg-mid: #E1B97C;
-    --card-bg: #F9E7D1;
-    --accent: #5A3A1B;
-    --accent-hover: #8C5C33;
-    --text-main: #3B2A1F;
-    --text-light: #7A5C4A;
+/* --- Mell - Rich & Luxurious Honey Theme (Full Version) --- */
 
+/* ================= VARIABLES ================= */
+:root {
+    /* ფერები: მდიდარი ტონები */
+    --bg-body: #E0C097;
+    --hero-bg-dark: #D4A67E;
+    --hero-bg-mid: #E6CAA6;
+    --card-bg: #F7F0E3;
+    --accent: #2D241E;
+    --accent-hover: #4A3C33;
+    --text-main: #2D241E;
+    --text-light: #5D4E46;
+    
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
+/* ================= BASE STYLES ================= */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -34,7 +39,7 @@ ul { list-style:none; }
 /* ================= HEADER ================= */
 .site-header {
     background: transparent;
-    padding:15px 0;
+    padding:25px 0;
     position:absolute;
     top:0;
     width:100%;
@@ -48,10 +53,12 @@ ul { list-style:none; }
 }
 
 .logo img {
-    height:95px;
+    height:95px; /* ლოგოს ზომა */
     width:auto;
+    display:block;
 }
 
+/* NAVIGATION */
 .main-nav ul {
     display:flex;
     gap:25px;
@@ -64,9 +71,11 @@ ul { list-style:none; }
     text-transform:uppercase;
 }
 
-.main-nav a:hover { color: var(--accent); }
+.main-nav a:hover {
+    color: var(--accent);
+}
 
-/* HAMBURGER */
+/* ================= HAMBURGER ================= */
 .hamburger {
     display:none;
     width:28px;
@@ -91,24 +100,9 @@ ul { list-style:none; }
 .hamburger span:nth-child(2){ top:9px; }
 .hamburger span:nth-child(3){ top:18px; }
 
-/* X ანიმაცია */
-.hamburger.open span:nth-child(1){
-    transform:rotate(45deg);
-    top:9px;
-}
-
-.hamburger.open span:nth-child(2){
-    opacity:0;
-}
-
-.hamburger.open span:nth-child(3){
-    transform:rotate(-45deg);
-    top:9px;
-}
-
-/* ================= HERO ================= */
+/* ================= HERO SECTION ================= */
 .hero-section {
-    padding:180px 0 100px;
+    padding:180px 0 120px;
     background: linear-gradient(
         to bottom left,
         var(--hero-bg-dark) 0%,
@@ -124,74 +118,91 @@ ul { list-style:none; }
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:40px;
+    gap:60px;
 }
 
 .hero-text { text-align:center; }
 
 .hero-text h1 {
     font-family: var(--font-head);
-    font-size:36px;
+    font-size:54px;
     font-weight:800;
-    margin-bottom:20px;
+    margin-bottom:24px;
+    color: var(--text-main);
 }
 
-.honey-text { color: var(--accent); }
+.honey-text { color: #8C6239; }
+
+.hero-text p {
+    font-size:18px;
+    font-weight:500;
+    opacity:0.9;
+    margin-bottom:35px;
+}
 
 /* ================= PRODUCTS ================= */
-.products-section { padding:80px 0; }
+.products-section {
+    padding:100px 0;
+}
 
 .products-grid {
     display:grid;
     grid-template-columns:1fr;
-    gap:25px;
+    gap:40px;
 }
 
 .product-card {
     background: var(--card-bg);
     border-radius:24px;
-    padding:25px;
+    overflow:hidden;
+    padding:30px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(59,42,31,0.15);
-    transition:transform 0.3s ease;
+    box-shadow:0 15px 35px rgba(45,36,30,0.1);
+    transition: transform 0.3s ease;
 }
 
-.product-card:hover { transform:translateY(-8px); }
+.product-card:hover {
+    transform: translateY(-12px);
+}
+
+.product-card h3 {
+    font-family: var(--font-head);
+    font-weight:700;
+    font-size:22px;
+    margin-bottom:15px;
+    color: var(--text-main);
+}
 
 .price {
-    font-size:22px;
+    font-size:26px;
     font-weight:800;
-    margin:15px 0;
-    color: var(--accent);
+    margin:20px 0;
+    color:#8C6239;
 }
 
 .btn {
     display:inline-block;
-    padding:10px 24px;
+    padding:14px 34px;
     border-radius:50px;
     font-weight:700;
     font-size:13px;
+    text-transform:uppercase;
     border:2px solid var(--accent);
     color: var(--accent);
     cursor:pointer;
 }
 
 .btn:hover {
-    background:var(--accent);
+    background: var(--accent);
     color:#fff;
 }
 
 /* ================= FOOTER ================= */
 footer {
     text-align:center;
-    padding:40px 0;
+    padding:60px 0;
     font-size:14px;
     color: var(--text-light);
-}
-
-/* ================= INTERNAL PAGES FIX ================= */
-.page-section {
-    padding:180px 0 80px;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -201,7 +212,6 @@ footer {
 }
 
 @media (max-width:767px){
-
     .hamburger { display:block; }
 
     .main-nav {
@@ -213,8 +223,7 @@ footer {
         background: var(--bg-body);
         padding:120px 20px;
         transition:left 0.3s ease;
-        box-shadow:2px 0 10px rgba(0,0,0,0.2);
-        z-index:1050;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
     }
 
     .main-nav ul {
@@ -224,9 +233,9 @@ footer {
 
     .main-nav.active { left:0; }
 
-    .logo img { height:75px; }
+    /* მობილურზე padding რომ ლოგო არ ფარავდეს */
+    .products-section { padding-top:180px !important; }
 
-    .page-section {
-        padding-top:140px;
-    }
+    /* ლოგო ოდნავ პატარავდება */
+    .logo img { height:75px; }
 }
