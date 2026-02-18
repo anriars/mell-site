@@ -27,6 +27,11 @@ ul { list-style:none; }
 .main-nav a { color:var(--text-main); font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; }
 .main-nav a:hover { color:#fff; }
 .header-actions { margin-top:10px; }
+.logo img {
+    height:55px;
+    width:auto;
+    display:block;
+}
 
 /* ===== Hero Section ===== */
 .hero-section {
