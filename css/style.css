@@ -1,4 +1,4 @@
-/* --- Mell - Rich & Luxurious Honey Theme --- */
+/* --- Mell - Rich & Luxurious Honey Theme (Updated Fixes) --- */
 
 :root {
     /* ფერები: მდიდარი ტონები */
@@ -23,6 +23,7 @@ body {
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height:1.6;
+    overflow-x: hidden; /* ჰორიზონტალური სქროლის აკრძალვა */
 }
 
 .container {
@@ -99,7 +100,6 @@ ul { list-style:none; }
 /* ================= HERO ================= */
 .hero-section {
     padding:180px 0 100px;
-    /* გლუვი გრადიენტი */
     background: linear-gradient(
         to bottom left,
         var(--hero-bg-dark) 0%,
@@ -216,4 +216,15 @@ footer {
     }
     
     .main-nav.active { left:0; }
+
+    /* --- აი აქ არის მთავარი შესწორება! --- */
+    /* ეს კოდი ავტომატურად ჩამოწევს პროდუქციის სექციას მობილურზე */
+    .products-section {
+        padding-top: 180px !important;
+    }
+    
+    /* ოდნავ დავაპატარავოთ ლოგო მობილურზე, რომ ნაკლები ადგილი წაიღოს */
+    .logo img {
+        height: 75px;
+    }
 }
