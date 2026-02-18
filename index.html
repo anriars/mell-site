@@ -60,7 +60,7 @@ ul { list-style:none; }
 
 /* LOGO FIXED SIZE */
 .logo img {
-    height:95px;     /* აქ გაზრდილია */
+    height:95px;
     width:auto;
     display:block;
 }
@@ -105,7 +105,7 @@ ul { list-style:none; }
 /* ================= HERO ================= */
 
 .hero-section {
-    padding:180px 0 100px; /* ლოგოს გაზრდის გამო padding გაიზარდა */
+    padding:180px 0 100px;
     background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
     border-bottom-left-radius:80px;
 }
@@ -184,7 +184,6 @@ footer {
 }
 
 @media (max-width:767px){
-
     .hamburger { display:block; }
 
     .main-nav {
@@ -285,13 +284,20 @@ function toggleMenu() {
     document.querySelector('.main-nav').classList.toggle('active');
 }
 
+// მენიუს ავტომატური დახურვა ლინკზე და გარეთ კლიკზე
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
 
+    // დახურვა როცა კლიკი ხდება ჰამბურგერ/მენიუს გარეთ
     if(nav.classList.contains('active') &&
        !nav.contains(event.target) &&
        !hamburger.contains(event.target)) {
+        nav.classList.remove('active');
+    }
+
+    // დახურვა როცა კლიკი ხდება ნავიგაციის ლინკზე
+    if(event.target.closest('.main-nav a')) {
         nav.classList.remove('active');
     }
 });
