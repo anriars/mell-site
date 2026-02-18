@@ -11,7 +11,7 @@
     --accent-hover: #4A3C33;
     --text-main: #2D241E;
     --text-light: #5D4E46;
-    
+
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
@@ -25,6 +25,11 @@ body {
     color: var(--text-main);
     line-height:1.6;
     overflow-x:hidden;
+    transition: 0.3s;
+}
+
+body.lock-scroll {
+    overflow: hidden; /* scroll lock when menu open */
 }
 
 .container {
@@ -95,6 +100,7 @@ ul { list-style:none; }
     left:0;
     transition:0.3s;
 }
+
 /* ===== Hamburger Animation to X ===== */
 .hamburger.active span:nth-child(1){
     transform: rotate(45deg);
@@ -228,16 +234,17 @@ footer {
 @media (max-width:767px){
     .hamburger { display:block; }
 
+    /* მენიუ მარჯვნიდან */
     .main-nav {
         position:fixed;
         top:0;
-        left:-100%;
+        right:-100%;
         width:70%;
         height:100%;
         background: var(--bg-body);
         padding:120px 20px;
-        transition:left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        transition:right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
     }
 
     .main-nav ul {
@@ -245,10 +252,13 @@ footer {
         gap:20px;
     }
 
-    .main-nav.active { left:0; }
+    .main-nav.active { right:0; }
 
     /* მობილურზე padding რომ ლოგო არ ფარავდეს */
     .products-section { padding-top:180px !important; }
+
+    /* პროდუქციის გვერდზე ლოგოს ზემოდან ტექსტის აღების კორექცია */
+    body.products-page .products-section { padding-top: 120px !important; }
 
     /* ლოგო ოდნავ პატარავდება */
     .logo img { height:75px; }
