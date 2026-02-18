@@ -44,7 +44,7 @@
 <section id="home" class="hero-section">
     <div class="container hero-content">
         <div class="hero-text">
-            <h1>პრემიუმ <span class="honey-text">თაფლი</span><br>მოხალული თხილეულით</h1>
+            <h1>პრემიუმ <span class="honey-text">თაფლი</span><br> მოხალული თხილეულით</h1>
             <p>აღმოაჩინე ბუნებრივი თაფლისა და ხრაშუნა, ახალმოხალული თხილეულის იდეალური კომბინაცია.</p>
             <div class="hero-btns">
                 <a href="#products" class="btn btn-gold">იხილეთ პროდუქცია</a>
@@ -63,36 +63,20 @@
             <p>ბუნებრივი და ჯანსაღი</p>
         </div>
 
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image"><span class="img-label">თაფლი + თხილი</span></div>
-                <div class="product-info">
-                    <h3>თაფლი თხილით</h3>
-                    <p class="description">მოხალული თხილი და ალპური თაფლი.</p>
-                    <div class="price">25.00 ₾</div>
-                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
-                </div>
-            </div>
+        <div id="products" class="products-grid">
+            <!-- JS-ით ჩამოიტვირთება JSON პროდუქცია -->
+        </div>
+    </div>
+</section>
 
-            <div class="product-card">
-                <div class="product-image"><span class="img-label">თაფლი + ნიგოზი</span></div>
-                <div class="product-info">
-                    <h3>თაფლი ნიგვზით</h3>
-                    <p class="description">ქართული ნიგოზი და ნატურალური თაფლი.</p>
-                    <div class="price">27.00 ₾</div>
-                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
-                </div>
-            </div>
+<section id="blog" class="blog-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>ბლოგი</h2>
+        </div>
 
-            <div class="product-card">
-                <div class="product-image"><span class="img-label">თაფლი + ნუში</span></div>
-                <div class="product-info">
-                    <h3>თაფლი ნუშით</h3>
-                    <p class="description">მოხალული ნუში და ოქროსფერი თაფლი.</p>
-                    <div class="price">30.00 ₾</div>
-                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
-                </div>
-            </div>
+        <div id="blog-posts" class="blog-grid">
+            <!-- JS-ით ჩამოიტვირთება JSON ბლოგი -->
         </div>
     </div>
 </section>
@@ -101,15 +85,6 @@
     <p>&copy; 2026 Mell. ყველა უფლება დაცულია.</p>
 </footer>
 
-<script>
-    // Hamburger auto-close for mobile
-    const menuLinks = document.querySelectorAll('.main-nav a');
-    const hamburgerCheckbox = document.getElementById('hamburger-toggle');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (hamburgerCheckbox) hamburgerCheckbox.checked = false;
-        });
-    });
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
