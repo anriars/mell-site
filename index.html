@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mell - პრემიუმ თაფლი</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mell - პრემიუმ თაფლი</title>
 
-<!-- FAVICON -->
-<link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
 </head>
 <body>
 
 <header class="site-header">
-<div class="container header-content">
+    <div class="container header-content">
+        <div class="logo">
+            <img src="images/logo.png" alt="Mell" height="70">
+        </div>
 
-    <div class="logo">
-        <a href="/"><img src="images/logo.png" alt="Mell Logo"></a>
+        <!-- Hamburger for mobile -->
+        <input type="checkbox" id="hamburger-toggle">
+        <label for="hamburger-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#home">მთავარი</a></li>
+                <li><a href="products.html">პროდუქცია</a></li>
+                <li><a href="blog.html">ბლოგი</a></li>
+                <li><a href="contact.html">კონტაქტი</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="https://wa.me/995555555555" target="_blank" class="btn btn-gold">შეკვეთა</a>
+        </div>
     </div>
-
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">მთავარი</a></li>
-            <li><a href="products.html">პროდუქცია</a></li>
-            <li><a href="blog.html">ბლოგი</a></li>
-            <li><a href="contact.html">კონტაქტი</a></li>
-        </ul>
-    </nav>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-</div>
 </header>
 
 <section id="home" class="hero-section">
-<div class="container hero-content">
-    <div class="hero-text">
-        <h1>პრემიუმ <span class="honey-text">თაფლი</span> თხილეულით</h1>
-        <p>ბუნებრივი გემო და ხარისხი ერთ ქილაში.</p>
-        <a href="products.html" class="btn btn-gold">იხილეთ პროდუქცია</a>
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>პრემიუმ <span class="honey-text">თაფლი</span><br>მოხალული თხილეულით</h1>
+            <p>აღმოაჩინე ბუნებრივი თაფლისა და ხრაშუნა, ახალმოხალული თხილეულის იდეალური კომბინაცია.</p>
+            <div class="hero-btns">
+                <a href="products.html" class="btn btn-gold">იხილეთ პროდუქცია</a>
+            </div>
+        </div>
+        <div class="hero-image-placeholder">
+            <span>პროდუქტის ფოტო</span>
+        </div>
     </div>
-</div>
-</section>
-
-<section id="products" class="products-section">
-<div class="container products-grid">
-
-    <div class="product-card">
-        <h3>თაფლი თხილით</h3>
-        <div class="price">25 ₾</div>
-        <a href="products.html" class="btn">მეტის ნახვა</a>
-    </div>
-
-    <div class="product-card">
-        <h3>თაფლი ნიგვზით</h3>
-        <div class="price">27 ₾</div>
-        <a href="products.html" class="btn">მეტის ნახვა</a>
-    </div>
-
-    <div class="product-card">
-        <h3>თაფლი ნუშით</h3>
-        <div class="price">30 ₾</div>
-        <a href="products.html" class="btn">მეტის ნახვა</a>
-    </div>
-
-</div>
 </section>
 
 <footer>
-<p>&copy; 2026 Mell</p>
+    <p>&copy; 2026 Mell. ყველა უფლება დაცულია.</p>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
