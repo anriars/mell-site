@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mell - პრემიუმ თაფლი</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 </head>
 <body>
 
 <header class="site-header">
     <div class="container header-content">
+        <!-- Logo -->
         <div class="logo">
             <img src="images/logo.png" alt="Mell" height="70">
         </div>
 
-        <!-- Hamburger toggle for mobile -->
+        <!-- Hamburger toggle -->
         <input type="checkbox" id="hamburger-toggle">
         <label for="hamburger-toggle" class="hamburger">
             <span></span>
@@ -26,6 +27,7 @@
             <span></span>
         </label>
 
+        <!-- Navigation -->
         <nav class="main-nav">
             <ul>
                 <li><a href="#home">მთავარი</a></li>
@@ -46,9 +48,7 @@
         <div class="hero-text">
             <h1>პრემიუმ <span class="honey-text">თაფლი</span><br> მოხალული თხილეულით</h1>
             <p>აღმოაჩინე ბუნებრივი თაფლისა და ხრაშუნა, ახალმოხალული თხილეულის იდეალური კომბინაცია.</p>
-            <div class="hero-btns">
-                <a href="#products" class="btn btn-gold">იხილეთ პროდუქცია</a>
-            </div>
+            <a href="#products" class="btn btn-gold">იხილეთ პროდუქცია</a>
         </div>
         <div class="hero-image-placeholder">
             <span>პროდუქტის ფოტო</span>
@@ -63,20 +63,36 @@
             <p>ბუნებრივი და ჯანსაღი</p>
         </div>
 
-        <div id="products" class="products-grid">
-            <!-- JS-ით ჩამოიტვირთება JSON პროდუქცია -->
-        </div>
-    </div>
-</section>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"><span>თაფლი + თხილი</span></div>
+                <div class="product-info">
+                    <h3>თაფლი თხილით</h3>
+                    <p>მოხალული თხილი და ალპური თაფლი.</p>
+                    <div class="price">25.00 ₾</div>
+                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
+                </div>
+            </div>
 
-<section id="blog" class="blog-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>ბლოგი</h2>
-        </div>
+            <div class="product-card">
+                <div class="product-image"><span>თაფლი + ნიგოზი</span></div>
+                <div class="product-info">
+                    <h3>თაფლი ნიგვზით</h3>
+                    <p>ქართული ნიგოზი და ნატურალური თაფლი.</p>
+                    <div class="price">27.00 ₾</div>
+                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
+                </div>
+            </div>
 
-        <div id="blog-posts" class="blog-grid">
-            <!-- JS-ით ჩამოიტვირთება JSON ბლოგი -->
+            <div class="product-card">
+                <div class="product-image"><span>თაფლი + ნუში</span></div>
+                <div class="product-info">
+                    <h3>თაფლი ნუშით</h3>
+                    <p>მოხალული ნუში და ოქროსფერი თაფლი.</p>
+                    <div class="price">30.00 ₾</div>
+                    <a href="https://wa.me/995555555555" class="btn btn-outline-sm">შეკვეთა</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -85,6 +101,5 @@
     <p>&copy; 2026 Mell. ყველა უფლება დაცულია.</p>
 </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>
