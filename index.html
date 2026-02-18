@@ -13,7 +13,6 @@
 
 <style>
 :root {
-    /* ფერები */
     --bg-body: #DDB987;
     --hero-bg-dark: #C58F5C;
     --hero-bg-mid: #E1B97C;
@@ -28,199 +27,61 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-    font-family: var(--font-body);
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    line-height:1.6;
-}
-
-.container {
-    width:90%;
-    max-width:1200px;
-    margin:0 auto;
-}
-
+body { font-family: var(--font-body); background-color: var(--bg-body); color: var(--text-main); line-height:1.6; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
 a { text-decoration:none; transition:0.3s ease; }
 ul { list-style:none; }
 
-/* ================= HEADER ================= */
-
-.site-header {
-    background: transparent;
-    padding:15px 0;
-    position:absolute;
-    top:0;
-    width:100%;
-    z-index:1000;
-}
-
-.header-content {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-/* LOGO */
-.logo img {
-    height:95px;
-    width:auto;
-    display:block;
-    cursor:pointer;
-}
-
-.main-nav ul {
-    display:flex;
-    gap:25px;
-}
-
-.main-nav a {
-    color:var(--text-main);
-    font-weight:700;
-    font-size:14px;
-    text-transform:uppercase;
-}
-
+/* HEADER */
+.site-header { background: transparent; padding:15px 0; position:absolute; top:0; width:100%; z-index:1000; }
+.header-content { display:flex; justify-content:space-between; align-items:center; }
+.logo img { height:95px; width:auto; display:block; cursor:pointer; }
+.main-nav ul { display:flex; gap:25px; }
+.main-nav a { color:var(--text-main); font-weight:700; font-size:14px; text-transform:uppercase; }
 .main-nav a:hover { color: var(--accent); }
 
 /* HAMBURGER */
-.hamburger {
-    display:none;
-    width:28px;
-    height:22px;
-    position:relative;
-    cursor:pointer;
-    z-index:1100;
-}
-
-.hamburger span {
-    display:block;
-    height:3px;
-    width:100%;
-    background:var(--text-main);
-    border-radius:3px;
-    position:absolute;
-    left:0;
-}
-
+.hamburger { display:none; width:28px; height:22px; position:relative; cursor:pointer; z-index:1100; }
+.hamburger span { display:block; height:3px; width:100%; background:var(--text-main); border-radius:3px; position:absolute; left:0; }
 .hamburger span:nth-child(1){ top:0; }
 .hamburger span:nth-child(2){ top:9px; }
 .hamburger span:nth-child(3){ top:18px; }
 
-/* ================= HERO ================= */
-
-.hero-section {
-    padding:180px 0 100px;
-    background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
-    border-bottom-left-radius:80px;
-    text-align:center;
-}
-
-.hero-text h1 {
-    font-family: var(--font-head);
-    font-size:36px;
-    font-weight:800;
-    margin-bottom:20px;
-}
-
+/* HERO */
+.hero-section { padding:180px 0 100px; background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%); border-bottom-left-radius:80px; text-align:center; }
+.hero-text h1 { font-family: var(--font-head); font-size:36px; font-weight:800; margin-bottom:20px; }
 .honey-text { color:#8C6239; }
 
-/* ================= PRODUCTS ================= */
+/* PRODUCTS GRID */
+.products-section, .all-products-section { padding:80px 0; }
+.products-grid, .all-products-grid, .blog-grid { display:grid; grid-template-columns:1fr; gap:25px; }
+.product-card, .blog-card { background:var(--card-bg); border-radius:24px; padding:25px; text-align:center; box-shadow:0 10px 25px rgba(59,42,31,0.15); transition: transform 0.3s ease; }
+.product-card:hover, .blog-card:hover { transform: translateY(-8px); }
+.product-info h3, .blog-card h3 { font-family: var(--font-head); font-size:20px; margin-bottom:10px; }
+.price { font-size:22px; font-weight:800; margin:15px 0; color:#8C6239; }
+.btn { display:inline-block; padding:10px 24px; border-radius:50px; font-weight:700; font-size:13px; border:2px solid var(--text-main); color:var(--text-main); }
+.btn:hover { background:var(--text-main); color:#fff; }
 
-.products-section { padding:80px 0; }
-
-.products-grid {
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-}
-
-.product-card {
-    background:var(--card-bg);
-    border-radius:24px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(59,42,31,0.15);
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover { transform: translateY(-8px); }
-
-.product-info h3 {
-    font-family: var(--font-head);
-    color: var(--text-main);
-    font-weight:700;
-    font-size:20px;
-}
-
-.price {
-    font-size:22px;
-    font-weight:800;
-    margin:15px 0;
-    color:#8C6239;
-}
-
-.btn {
-    display:inline-block;
-    padding:10px 24px;
-    border-radius:50px;
-    font-weight:700;
-    font-size:13px;
-    border:2px solid var(--text-main);
-    color:var(--text-main);
-}
-
-.btn:hover {
-    background:var(--text-main);
-    color:#fff;
-}
-
-/* ================= BLOG ================= */
-
+/* BLOG */
 .blog-section { padding:80px 0; }
 .blog-section h2 { text-align:center; font-family: var(--font-head); margin-bottom:50px; font-size:36px; }
-.blog-grid { display:grid; grid-template-columns:1fr; gap:25px; }
-.blog-card {
-    background:var(--card-bg);
-    border-radius:24px;
-    padding:25px;
-    box-shadow:0 10px 25px rgba(59,42,31,0.15);
-    transition: transform 0.3s ease;
-}
-.blog-card:hover { transform: translateY(-8px); }
-.blog-card h3 { font-family: var(--font-head); font-size:20px; margin-bottom:10px; }
 
-/* ================= FOOTER ================= */
+/* CONTACT */
+.contact-section { padding:80px 0; text-align:center; }
+.contact-section h2 { font-family: var(--font-head); margin-bottom:30px; font-size:36px; }
+.contact-section form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
+.contact-section input, .contact-section textarea { padding:12px; border-radius:10px; border:1px solid #aaa; font-size:16px; width:100%; }
+.contact-section button { padding:12px 20px; border-radius:50px; border:none; background:var(--accent); color:#fff; font-weight:700; cursor:pointer; transition:0.3s; }
+.contact-section button:hover { background:var(--accent-hover); }
 
-footer {
-    text-align:center;
-    padding:40px 0;
-    font-size:14px;
-    color: var(--text-light);
-}
+/* FOOTER */
+footer { text-align:center; padding:40px 0; font-size:14px; color: var(--text-light); }
 
-/* ================= RESPONSIVE ================= */
-
-@media (min-width:768px){
-    .products-grid { grid-template-columns:repeat(3,1fr); }
-    .blog-grid { grid-template-columns:repeat(3,1fr); }
-}
-
+/* RESPONSIVE */
+@media (min-width:768px){ .products-grid, .all-products-grid { grid-template-columns:repeat(3,1fr); } .blog-grid { grid-template-columns:repeat(3,1fr); } }
 @media (max-width:767px){
     .hamburger { display:block; }
-
-    .main-nav {
-        position:fixed;
-        top:0;
-        left:-100%;
-        width:70%;
-        height:100%;
-        background:var(--bg-body);
-        padding:120px 20px;
-        transition:left 0.3s ease;
-    }
-
+    .main-nav { position:fixed; top:0; left:-100%; width:70%; height:100%; background:var(--bg-body); padding:120px 20px; transition:left 0.3s ease; }
     .main-nav ul { flex-direction:column; gap:20px; }
     .main-nav.active { left:0; }
 }
@@ -232,31 +93,25 @@ footer {
 <header class="site-header">
 <div class="container header-content">
 
-    <!-- LOGO LINK TO HOMEPAGE -->
     <div class="logo">
-        <a href="index.html">
-            <img src="images/logo.png" alt="Mell Logo">
-        </a>
+        <a href="index.html"><img src="images/logo.png" alt="Mell Logo"></a>
     </div>
 
     <nav class="main-nav">
         <ul>
-            <li><a href="#home">მთავარი</a></li>
-            <li><a href="#products">პროდუქცია</a></li>
+            <li><a href="index.html">მთავარი</a></li>
+            <li><a href="products.html">პროდუქცია</a></li>
             <li><a href="#blog">ბლოგი</a></li>
             <li><a href="#contact">კონტაქტი</a></li>
         </ul>
     </nav>
 
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 
 </div>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero-section">
 <div class="container hero-text">
     <h1>პრემიუმ <span class="honey-text">თაფლი</span> თხილეულით</h1>
@@ -264,53 +119,62 @@ footer {
 </div>
 </section>
 
-<section id="products" class="products-section">
+<!-- TOP PRODUCTS PREVIEW -->
+<section class="products-section">
 <div class="container products-grid">
 
     <div class="product-card">
         <h3>თაფლი თხილით</h3>
         <div class="price">25 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი თხილით')" class="btn">შეკვეთა</a>
+        <a href="products.html#top" class="btn">იხილეთ</a>
     </div>
 
     <div class="product-card">
         <h3>თაფლი ნიგვზით</h3>
         <div class="price">27 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი ნიგვზით')" class="btn">შეკვეთა</a>
+        <a href="products.html#top" class="btn">იხილეთ</a>
     </div>
 
     <div class="product-card">
         <h3>თაფლი ნუშით</h3>
         <div class="price">30 ₾</div>
-        <a href="#" onclick="orderProduct('თაფლი ნუშით')" class="btn">შეკვეთა</a>
+        <a href="products.html#top" class="btn">იხილეთ</a>
     </div>
 
 </div>
 </section>
 
+<!-- BLOG -->
 <section id="blog" class="blog-section">
 <h2>ბლოგი</h2>
 <div class="container blog-grid">
-
     <div class="blog-card">
         <h3>სიხარული ბუნებიდან</h3>
         <p>ჩვენი თაფლი ბუნების სიწმინდესთან ერთად გთავაზობთ.</p>
         <a href="#" class="btn">მეტი</a>
     </div>
-
     <div class="blog-card">
         <h3>თხილის არჩევა</h3>
         <p>როგორ ავირჩიოთ იდეალური თხილი ჩვენი პროდუქტისთვის.</p>
         <a href="#" class="btn">მეტი</a>
     </div>
-
     <div class="blog-card">
         <h3>თაფლის საიდუმლო</h3>
         <p>ბუნებრივი გემო და ხარისხი ჩვენი ტრადიციების საფუძველზე.</p>
         <a href="#" class="btn">მეტი</a>
     </div>
-
 </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+<h2>კონტაქტი</h2>
+<form onsubmit="sendMessage(event)">
+    <input type="text" name="name" placeholder="სახელი" required>
+    <input type="tel" name="phone" placeholder="მობილური" required>
+    <textarea name="message" placeholder="შეტყობინება" rows="5" required></textarea>
+    <button type="submit">გაგზავნა</button>
+</form>
 </section>
 
 <footer>
@@ -318,27 +182,36 @@ footer {
 </footer>
 
 <script>
-function orderProduct(name) {
-    const phone = "995555555555";
-    const message = `მინდა შეკვეთა: ${name}`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-}
-
 function toggleMenu() {
     document.querySelector('.main-nav').classList.toggle('active');
 }
 
+// დახურვა მენიუს კლიკზე
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
-
     if(nav.classList.contains('active') &&
        !nav.contains(event.target) &&
        !hamburger.contains(event.target)) {
         nav.classList.remove('active');
     }
 });
+
+function orderProduct(name) {
+    const phone = "995555555555";
+    const message = `მინდა შეკვეთა: ${name}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url,'_blank');
+}
+
+function sendMessage(e){
+    e.preventDefault();
+    const form = e.target;
+    const phone="995555555555";
+    const text=`შეტყობინება:\nსახელი: ${form.name.value}\nმობილური: ${form.phone.value}\nშეტყობინება: ${form.message.value}`;
+    const url=`https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url,'_blank');
+}
 </script>
 
 </body>
