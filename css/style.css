@@ -1,21 +1,17 @@
-/* --- Mell - Rich & Luxurious Honey Theme (Updated Fixes) --- */
-
 :root {
-    /* ფერები: მდიდარი ტონები */
-    --bg-body: #DDB987;       /* ფონი */
-    --hero-bg-dark: #C58F5C;  /* hero-gradient მუქი */
-    --hero-bg-mid: #E1B97C;   /* hero-gradient მსუბუქი */
-    --card-bg: #F9E7D1;       /* ბარათების ფონი */
-    --accent: #5A3A1B;        /* ღილაკები/აქცენტი */
-    --accent-hover: #8C5C33;  /* ჰოვერზე */
-    --text-main: #3B2A1F;     /* მთავარი ტექსტი */
-    --text-light: #7A5C4A;    /* მსუბუქი ტექსტი */
-    
+    --bg-body: #DDB987;
+    --hero-bg-dark: #C58F5C;
+    --hero-bg-mid: #E1B97C;
+    --card-bg: #F9E7D1;
+    --accent: #5A3A1B;
+    --accent-hover: #8C5C33;
+    --text-main: #3B2A1F;
+    --text-light: #7A5C4A;
+
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* საბაზისო პარამეტრები */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -23,7 +19,7 @@ body {
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height:1.6;
-    overflow-x: hidden; /* ჰორიზონტალური სქროლის აკრძალვა */
+    overflow-x:hidden;
 }
 
 .container {
@@ -54,10 +50,8 @@ ul { list-style:none; }
 .logo img {
     height:95px;
     width:auto;
-    display:block;
 }
 
-/* NAV */
 .main-nav ul {
     display:flex;
     gap:25px;
@@ -90,12 +84,27 @@ ul { list-style:none; }
     border-radius:3px;
     position:absolute;
     left:0;
-    transition: 0.3s;
+    transition:0.3s;
 }
 
 .hamburger span:nth-child(1){ top:0; }
 .hamburger span:nth-child(2){ top:9px; }
 .hamburger span:nth-child(3){ top:18px; }
+
+/* X ანიმაცია */
+.hamburger.open span:nth-child(1){
+    transform:rotate(45deg);
+    top:9px;
+}
+
+.hamburger.open span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.open span:nth-child(3){
+    transform:rotate(-45deg);
+    top:9px;
+}
 
 /* ================= HERO ================= */
 .hero-section {
@@ -125,12 +134,11 @@ ul { list-style:none; }
     font-size:36px;
     font-weight:800;
     margin-bottom:20px;
-    color: var(--text-main);
 }
 
 .honey-text { color: var(--accent); }
 
-/* ================= PRODUCTS GRID ================= */
+/* ================= PRODUCTS ================= */
 .products-section { padding:80px 0; }
 
 .products-grid {
@@ -145,18 +153,10 @@ ul { list-style:none; }
     padding:25px;
     text-align:center;
     box-shadow:0 10px 25px rgba(59,42,31,0.15);
-    transition: transform 0.3s ease;
+    transition:transform 0.3s ease;
 }
 
-.product-card:hover { transform: translateY(-8px); }
-
-.product-card h3 {
-    font-family: var(--font-head);
-    color: var(--text-main);
-    font-weight:700;
-    font-size:20px;
-    margin-bottom: 10px;
-}
+.product-card:hover { transform:translateY(-8px); }
 
 .price {
     font-size:22px;
@@ -173,12 +173,12 @@ ul { list-style:none; }
     font-size:13px;
     border:2px solid var(--accent);
     color: var(--accent);
-    cursor: pointer;
+    cursor:pointer;
 }
 
 .btn:hover {
-    background: var(--accent);
-    color: #fff;
+    background:var(--accent);
+    color:#fff;
 }
 
 /* ================= FOOTER ================= */
@@ -189,6 +189,11 @@ footer {
     color: var(--text-light);
 }
 
+/* ================= INTERNAL PAGES FIX ================= */
+.page-section {
+    padding:180px 0 80px;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (min-width:768px){
     .hero-content { flex-direction:row; }
@@ -196,8 +201,9 @@ footer {
 }
 
 @media (max-width:767px){
+
     .hamburger { display:block; }
-    
+
     .main-nav {
         position:fixed;
         top:0;
@@ -207,24 +213,20 @@ footer {
         background: var(--bg-body);
         padding:120px 20px;
         transition:left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        box-shadow:2px 0 10px rgba(0,0,0,0.2);
+        z-index:1050;
     }
-    
+
     .main-nav ul {
         flex-direction:column;
         gap:20px;
     }
-    
+
     .main-nav.active { left:0; }
 
-    /* --- აი აქ არის მთავარი შესწორება! --- */
-    /* ეს კოდი ავტომატურად ჩამოწევს პროდუქციის სექციას მობილურზე */
-    .products-section {
-        padding-top: 180px !important;
-    }
-    
-    /* ოდნავ დავაპატარავოთ ლოგო მობილურზე, რომ ნაკლები ადგილი წაიღოს */
-    .logo img {
-        height: 75px;
+    .logo img { height:75px; }
+
+    .page-section {
+        padding-top:140px;
     }
 }
