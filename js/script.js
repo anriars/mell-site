@@ -1,7 +1,14 @@
-const menuLinks = document.querySelectorAll('.main-nav a');
-const hamburgerCheckbox = document.getElementById('hamburger-toggle');
-menuLinks.forEach(link => {
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('.main-nav');
+const navLinks = document.querySelectorAll('.main-nav a');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+// Auto-close on link click
+navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (hamburgerCheckbox) hamburgerCheckbox.checked = false;
+        nav.classList.remove('active');
     });
 });
