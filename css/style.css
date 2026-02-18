@@ -1,20 +1,28 @@
-/* --- Mell - Rich & Luxurious Honey Theme --- */
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mell - პრემიუმ თაფლი</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
 :root {
-    /* ფერები - სურათიდან აღებული, მსუყე ტონები */
-    --bg-body: #DDB987;       /* ფონი: მდიდარი კრემისფერი */
-    --hero-bg-dark: #C58F5C;  /* hero-gradient მუქი ნაწილი */
-    --hero-bg-mid: #E1B97C;   /* hero-gradient მსუბუქი ნაწილი */
-    --card-bg: #F9E7D1;       /* ბარათების ფონიც უფრო მსუყე */
-    --accent: #5A3A1B;        /* ღილაკები */
-    --accent-hover: #8C5C33;  /* ჰოვერზე */
-    --text-main: #3B2A1F;     /* ტექსტი */
-    --text-light: #7A5C4A;    /* მსუბუქი ტექსტი */
-    
+    --bg-body: #E0C097;
+    --hero-bg-dark: #D4A67E;
+    --hero-bg-mid: #E6CAA6;
+    --card-bg: #F7F0E3;
+    --accent: #2D241E;
+    --accent-hover: #4A3C33;
+    --text-main: #2D241E;
     --font-head: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
-/* საბაზისო პარამეტრები */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -24,13 +32,9 @@ body {
     line-height:1.6;
 }
 
-.container {
-    width:90%;
-    max-width:1200px;
-    margin:0 auto;
-}
+.container { width:90%; max-width:1200px; margin:0 auto; }
 
-a { text-decoration:none; transition:0.3s ease; }
+a { text-decoration:none; }
 ul { list-style:none; }
 
 /* ================= HEADER ================= */
@@ -70,8 +74,6 @@ ul { list-style:none; }
     text-transform:uppercase;
 }
 
-.main-nav a:hover { color: var(--accent); }
-
 /* HAMBURGER */
 .hamburger {
     display:none;
@@ -98,10 +100,20 @@ ul { list-style:none; }
 
 /* ================= HERO ================= */
 
+/* 🎨 Hero section with smooth, rich honey gradient */
 .hero-section {
     padding:180px 0 100px;
-    background: linear-gradient(to bottom left, var(--hero-bg-dark) 0%, var(--hero-bg-mid) 50%, var(--bg-body) 100%);
     border-bottom-left-radius:80px;
+
+    /* გრადიენტი გლუვად, “ტყდომის” გარეშე */
+    background: linear-gradient(
+        to bottom left,
+        var(--hero-bg-dark) 0%,
+        #D9A67F 25%,     /* ნაზი გარდამავალი შუა */
+        var(--hero-bg-mid) 50%,
+        #ECD1A8 75%,     /* ნაზი გარდამავალი ღია */
+        var(--bg-body) 100%
+    );
 }
 
 .hero-content {
@@ -111,9 +123,7 @@ ul { list-style:none; }
     gap:40px;
 }
 
-.hero-text {
-    text-align:center;
-}
+.hero-text { text-align:center; }
 
 .hero-text h1 {
     font-family: var(--font-head);
@@ -139,17 +149,6 @@ ul { list-style:none; }
     border-radius:24px;
     padding:25px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(59,42,31,0.15);
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover { transform: translateY(-8px); }
-
-.product-info h3 {
-    font-family: var(--font-head);
-    color: var(--text-main);
-    font-weight:700;
-    font-size:20px;
 }
 
 .price {
@@ -176,12 +175,7 @@ ul { list-style:none; }
 
 /* ================= FOOTER ================= */
 
-footer {
-    text-align:center;
-    padding:40px 0;
-    font-size:14px;
-    color: var(--text-light);
-}
+footer { text-align:center; padding:40px 0; }
 
 /* ================= RESPONSIVE ================= */
 
@@ -191,7 +185,6 @@ footer {
 }
 
 @media (max-width:767px){
-
     .hamburger { display:block; }
 
     .main-nav {
@@ -212,3 +205,97 @@ footer {
 
     .main-nav.active { left:0; }
 }
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container header-content">
+
+    <div class="logo">
+        <a href="#home"><img src="images/logo.png" alt="Mell Logo"></a>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">მთავარი</a></li>
+            <li><a href="#products">პროდუქცია</a></li>
+            <li><a href="#contact">კონტაქტი</a></li>
+        </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+</header>
+
+<section id="home" class="hero-section">
+<div class="container hero-content">
+
+    <div class="hero-text">
+        <h1>პრემიუმ <span class="honey-text">თაფლი</span> თხილეულით</h1>
+        <p>ბუნებრივი გემო და ხარისხი ერთ ქილაში.</p>
+    </div>
+
+</div>
+</section>
+
+<section id="products" class="products-section">
+<div class="container products-grid">
+
+    <div class="product-card">
+        <h3>თაფლი თხილით</h3>
+        <div class="price">25 ₾</div>
+        <a href="#" onclick="orderProduct('თაფლი თხილით')" class="btn">შეკვეთა</a>
+    </div>
+
+    <div class="product-card">
+        <h3>თაფლი ნიგვზით</h3>
+        <div class="price">27 ₾</div>
+        <a href="#" onclick="orderProduct('თაფლი ნიგვზით')" class="btn">შეკვეთა</a>
+    </div>
+
+    <div class="product-card">
+        <h3>თაფლი ნუშით</h3>
+        <div class="price">30 ₾</div>
+        <a href="#" onclick="orderProduct('თაფლი ნუშით')" class="btn">შეკვეთა</a>
+    </div>
+
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Mell</p>
+</footer>
+
+<script>
+function orderProduct(name) {
+    const phone = "995555555555";
+    const message = `მინდა შეკვეთა: ${name}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+function toggleMenu() {
+    document.querySelector('.main-nav').classList.toggle('active');
+}
+
+document.addEventListener('click', function(event) {
+    const nav = document.querySelector('.main-nav');
+    const hamburger = document.querySelector('.hamburger');
+
+    if(nav.classList.contains('active') &&
+       !nav.contains(event.target) &&
+       !hamburger.contains(event.target)) {
+        nav.classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>
