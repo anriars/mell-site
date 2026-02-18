@@ -294,23 +294,7 @@ document.addEventListener('click', function(event) {
        !hamburger.contains(event.target)) {
         nav.classList.remove('active');
     }
-    /* ================= MOBILE FIX FOR HEADER OVERLAP ================= */
-@media (max-width:767px) {
-    /* header-ის სიჩქარე */
-    .site-header {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
 
-    /* ყველა სექცია რომ ლოგოს ზემოდან არ გაჭრას */
-    section {
-        padding-top: 140px; /* მობილურზე მეტი სივრცე */
-    }
-
-    /* hero-section თუ უფრო დიდი უნდა */
-    .hero-section {
-        padding-top: 180px;
-    }
 });
 </script>
 
