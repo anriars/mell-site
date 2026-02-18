@@ -31,6 +31,12 @@ body {
     margin:0 auto;
 }
 
+/* კლასი შიდა გვერდებისთვის (რომ ლოგო არ დაეფაროს) */
+.page-padding {
+    padding-top: 150px;
+    padding-bottom: 60px;
+}
+
 a { text-decoration:none; transition:0.3s ease; }
 ul { list-style:none; }
 
@@ -169,51 +175,3 @@ ul { list-style:none; }
     display:inline-block;
     padding:10px 24px;
     border-radius:50px;
-    font-weight:700;
-    font-size:13px;
-    border:2px solid var(--accent);
-    color: var(--accent);
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: var(--accent);
-    color: #fff;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    text-align:center;
-    padding:40px 0;
-    font-size:14px;
-    color: var(--text-light);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (min-width:768px){
-    .hero-content { flex-direction:row; }
-    .products-grid { grid-template-columns:repeat(3,1fr); }
-}
-
-@media (max-width:767px){
-    .hamburger { display:block; }
-    
-    .main-nav {
-        position:fixed;
-        top:0;
-        left:-100%;
-        width:70%;
-        height:100%;
-        background: var(--bg-body);
-        padding:120px 20px;
-        transition:left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-    }
-    
-    .main-nav ul {
-        flex-direction:column;
-        gap:20px;
-    }
-    
-    .main-nav.active { left:0; }
-}
