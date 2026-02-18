@@ -1,0 +1,20 @@
+[
+  {
+    "name": "თაფლი თხილით",
+    "description": "მოხალული თხილი და ალპური თაფლი.",
+    "price": "25.00",
+    "image": "images/honey-nuts.png"
+  },
+  {
+    "name": "თაფლი ნიგვზით",
+    "description": "ქართული ნიგოზი და ნატურალური თაფლი.",
+    "price": "27.00",
+    "image": "images/honey-walnut.png"
+  },
+  {
+    "name": "თაფლი ნუშით",
+    "description": "მოხალული ნუში და ოქროსფერი თაფლი.",
+    "price": "30.00",
+    "image": "images/honey-almond.png"
+  }
+]
