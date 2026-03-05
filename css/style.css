@@ -62,7 +62,7 @@ ul { list-style:none; }
 /* ================= HERO SLIDER ================= */
 .hero-slider {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .slide {
