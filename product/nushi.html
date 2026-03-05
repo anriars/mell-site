@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მოხალული ნუში თაფლით - Mell</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-content">
+        <div class="logo">
+            <a href="/"><img src="../images/logo.png" alt="Mell Logo"></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">მთავარი</a></li>
+                <li><a href="/products.html">პროდუქცია</a></li>
+                <li><a href="/blog.html">ბლოგი</a></li>
+                <li><a href="/contact.html">კონტაქტი</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<section class="product-detail-section">
+    <div class="container product-detail">
+
+        <div class="product-detail-img">
+            <img src="../images/ნუში.jpg" alt="მოხალული ნუში თაფლით">
+        </div>
+
+        <div class="product-detail-info">
+            <a href="/products.html" class="back-link">← პროდუქცია</a>
+            <h1>მოხალული ნუში თაფლით</h1>
+
+            <p class="product-detail-desc">ხელით გასუფთავებული და მოხალული, ქართული ნუშისა და ნატურალური, ორგანული თაფლის უგემრიელესი კომბინაცია.</p>
+
+            <div class="product-detail-specs">
+                <div class="spec-row"><span>სრული შიგთავსის წონა</span><span>350 გრ.</span></div>
+                <div class="spec-row"><span>თხილის წონა</span><span>150 გრ.</span></div>
+                <div class="spec-row"><span>თაფლის წონა</span><span>200 გრ.</span></div>
+            </div>
+
+            <span class="sale-badge">აქცია</span>
+            <div class="price-wrapper">
+                <span class="price-old">30 ₾</span>
+                <span class="price-new">19 ₾</span>
+            </div>
+
+            <button onclick="orderProduct('მოხალული ნუში თაფლით')" class="btn btn-primary btn-large">შეკვეთა WhatsApp-ით</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Mell</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
