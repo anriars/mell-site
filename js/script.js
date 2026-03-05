@@ -1,43 +1,98 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ================= SLIDER =================
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    if (slides.length) {
+        let current = 0;
+        let autoplay;
+
+        function goTo(index) {
+            slides[current].classList.remove('active');
+            if (dots.length) dots[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            if (dots.length) dots[current].classList.add('active');
+        }
+
+        function startAutoplay() {
+            autoplay = setInterval(() => goTo(current + 1), 5000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplay);
+            startAutoplay();
+        }
+
+        document.getElementById('sliderNext')?.addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+        document.getElementById('sliderPrev')?.addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => { goTo(+dot.dataset.index); resetAutoplay(); });
+        });
+
+        // მობილურზე swipe — მხოლოდ ჰორიზონტალური, ვერტიკალური სქროლი არ დაიბლოკოს
+        let touchStartX = 0;
+        let touchStartY = 0;
+        const slider = document.querySelector('.hero-slider');
+        if (slider) {
+            slider.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            slider.addEventListener('touchend', e => {
+                const diffX = touchStartX - e.changedTouches[0].clientX;
+                const diffY = touchStartY - e.changedTouches[0].clientY;
+                // მხოლოდ თუ ჰორიზონტალური მოძრაობა ვერტიკალურზე მეტია
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    goTo(diffX > 0 ? current + 1 : current - 1);
+                    resetAutoplay();
+                }
+            }, { passive: true });
+        }
+
+        startAutoplay();
+    }
+
+    // ================= HAMBURGER =================
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('.main-nav');
-    const navLinks = document.querySelectorAll('.main-nav a');
 
-    // 1. ჰამბურგერზე დაჭერა (გახსნა/დახურვა)
-    if (hamburger) {
+    if (hamburger && nav) {
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             nav.classList.toggle('active');
-            hamburger.classList.toggle('active'); // X ↔ Hamburger
-            document.body.classList.toggle('lock-scroll'); // scroll lock
+            hamburger.classList.toggle('active');
+            document.body.classList.toggle('lock-scroll');
         });
     }
 
-    // 2. მენიუს დახურვა ლინკზე დაჭერისას
-    navLinks.forEach(link => {
+    document.querySelectorAll('.main-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            hamburger.classList.remove('active');
+            nav && nav.classList.remove('active');
+            hamburger && hamburger.classList.remove('active');
             document.body.classList.remove('lock-scroll');
         });
     });
 
-    // 3. მენიუს დახურვა გვერდზე (ცარიელ ადგილას) დაჭერისას
     document.addEventListener('click', (e) => {
-        if(nav.classList.contains('active')){
-            if(!nav.contains(e.target) && !hamburger.contains(e.target)){
+        if (nav && nav.classList.contains('active')) {
+            if (!nav.contains(e.target) && !(hamburger && hamburger.contains(e.target))) {
                 nav.classList.remove('active');
-                hamburger.classList.remove('active');
+                hamburger && hamburger.classList.remove('active');
                 document.body.classList.remove('lock-scroll');
             }
         }
     });
+
 });
 
-// WhatsApp შეკვეთა
-function orderProduct(name){
-    const phone = "995511441142"; 
+// ================= WHATSAPP =================
+function orderProduct(name) {
+    const phone = "995511441142";
     const message = `გამარჯობა, მინდა შეკვეთა: ${name}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url,'_blank');
+    window.open(url, '_blank');
 }
