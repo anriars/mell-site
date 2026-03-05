@@ -63,48 +63,46 @@ ul { list-style:none; }
 .hero-slider {
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
 }
 
 .slide {
     display: none;
-    min-height: 100vh;
-    padding: 160px 0 80px;
+    padding: 150px 0 80px;
     border-bottom-left-radius: 80px;
 }
 
 .slide.active { display: block; }
 
 .slide-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 60px;
-    min-height: calc(100vh - 240px);
+    gap: 50px;
 }
 
-.slide-img-link { flex: 1; display:block; }
+.slide-img-link { display: block; }
 
 .slide-img {
     width: 100%;
-    height: 500px;
+    height: 380px;
     object-fit: cover;
     border-radius: 24px;
     box-shadow: 0 20px 60px rgba(45,36,30,0.25);
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .slide-img:hover { transform: scale(1.02); }
 
 .slide-text {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .slide-text h1 {
     font-family: var(--font-head);
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--text-main);
     line-height: 1.2;
@@ -113,7 +111,7 @@ ul { list-style:none; }
 .honey-text { color: #8C6239; }
 
 .slide-text p {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     opacity: 0.85;
     line-height: 1.7;
@@ -121,7 +119,7 @@ ul { list-style:none; }
 
 .slide-price { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
-.slide-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.slide-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
 
 /* სლაიდერის ღილაკები */
 .slider-btn {
@@ -333,17 +331,16 @@ footer { text-align:center; padding:60px 0; font-size:14px; color:var(--text-lig
     .main-nav ul { flex-direction:column; gap:20px; }
     .main-nav.active { right:0; }
 
-    .slide { padding: 120px 0 60px; min-height: auto; }
+    .slide { padding: 120px 0 60px; }
 
     .slide-content {
-        flex-direction: column;
-        gap: 30px;
-        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
-    .slide-img { height: 280px; }
+    .slide-img { height: 260px; }
 
-    .slide-text h1 { font-size: 30px; }
+    .slide-text h1 { font-size: 28px; }
     .slide-text { text-align: center; align-items: center; }
 
     .slider-btn { display: none; }
