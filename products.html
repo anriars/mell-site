@@ -4,47 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>პროდუქცია - Mell</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .price-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 8px 0;
-        }
-        .price-old {
-            text-decoration: line-through;
-            color: #aaa;
-            font-size: 1rem;
-        }
-        .price-new {
-            color: #e63946;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-        .sale-badge {
-            background: #e63946;
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 7px;
-            border-radius: 20px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-    </style>
 </head>
 <body>
+
 <header class="site-header">
     <div class="container header-content">
         <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Mell Logo">
-            </a>
+            <a href="/"><img src="images/logo.png" alt="Mell Logo"></a>
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html">მთავარი</a></li>
+                <li><a href="/">მთავარი</a></li>
                 <li><a href="products.html">პროდუქცია</a></li>
                 <li><a href="blog.html">ბლოგი</a></li>
                 <li><a href="contact.html">კონტაქტი</a></li>
@@ -57,11 +30,15 @@
         </div>
     </div>
 </header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <section class="page-section">
     <div class="container">
         <h2>ჩვენი პროდუქცია</h2>
         <br><br>
         <div class="products-grid">
+
             <div class="product-card">
                 <h3>თაფლი თხილით</h3>
                 <span class="sale-badge">აქცია</span>
@@ -71,6 +48,7 @@
                 </div>
                 <button onclick="orderProduct('თაფლი თხილით')" class="btn">შეკვეთა</button>
             </div>
+
             <div class="product-card">
                 <h3>თაფლი ნიგვზით</h3>
                 <span class="sale-badge">აქცია</span>
@@ -80,6 +58,7 @@
                 </div>
                 <button onclick="orderProduct('თაფლი ნიგვზით')" class="btn">შეკვეთა</button>
             </div>
+
             <div class="product-card">
                 <h3>თაფლი ნუშით</h3>
                 <span class="sale-badge">აქცია</span>
@@ -89,12 +68,15 @@
                 </div>
                 <button onclick="orderProduct('თაფლი ნუშით')" class="btn">შეკვეთა</button>
             </div>
+
         </div>
     </div>
 </section>
+
 <footer>
     <p>&copy; 2026 Mell</p>
 </footer>
+
 <script src="js/script.js"></script>
 </body>
 </html>
