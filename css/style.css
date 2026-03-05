@@ -166,11 +166,6 @@ ul { list-style:none; }
 
 .dot.active { background: var(--accent); width: 28px; border-radius: 5px; }
 
-/* სლაიდების ფერები */
-.slide-1 { background: linear-gradient(to bottom left, #D4A67E 0%, #D9A67F 25%, #E6CAA6 50%, #ECD1A8 75%, #E0C097 100%); }
-.slide-2 { background: linear-gradient(to bottom left, #C9A070 0%, #D4AB80 25%, #E3C89A 50%, #EDD4A5 75%, #E0C097 100%); }
-.slide-3 { background: linear-gradient(to bottom left, #CEA878 0%, #D9B285 25%, #E8CFA0 50%, #F0DAB0 75%, #E0C097 100%); }
-
 /* ================= PRODUCTS PAGE ================= */
 .page-section { padding: 160px 0 80px; }
 
@@ -381,3 +376,8 @@ footer { text-align:center; padding:60px 0; font-size:14px; color:var(--text-lig
 
     .logo img { height: 85px; }
 }
+
+/* სლაიდების ფერები */
+.slide-1 { background: linear-gradient(to bottom left, #D4A67E 0%, #D9A67F 25%, #E6CAA6 50%, #ECD1A8 75%, #E0C097 100%); }
+.slide-2 { background: linear-gradient(to bottom left, #C9A070 0%, #D4AB80 25%, #E3C89A 50%, #EDD4A5 75%, #E0C097 100%); }
+.slide-3 { background: linear-gradient(to bottom left, #CEA878 0%, #D9B285 25%, #E8CFA0 50%, #F0DAB0 75%, #E0C097 100%); }
