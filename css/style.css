@@ -62,13 +62,13 @@ ul { list-style:none; }
 /* ================= HERO SLIDER ================= */
 .hero-slider {
     position: relative;
-    overflow: visible;
 }
 
 .slide {
     display: none;
     padding: 150px 0 80px;
     border-bottom-left-radius: 80px;
+    min-height: 600px;
 }
 
 .slide.active { display: block; }
