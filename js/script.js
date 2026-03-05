@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // უსაფრთხოება — lock-scroll არ დარჩეს
+    document.body.classList.remove('lock-scroll');
+
     // ================= SLIDER =================
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -25,14 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoplay();
         }
 
-        document.getElementById('sliderNext')?.addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
-        document.getElementById('sliderPrev')?.addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+        const nextBtn = document.getElementById('sliderNext');
+        const prevBtn = document.getElementById('sliderPrev');
+
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); goTo(current + 1); resetAutoplay(); });
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); goTo(current - 1); resetAutoplay(); });
 
         dots.forEach(dot => {
             dot.addEventListener('click', () => { goTo(+dot.dataset.index); resetAutoplay(); });
         });
 
-        // მობილურზე swipe — მხოლოდ ჰორიზონტალური, ვერტიკალური სქროლი არ დაიბლოკოს
+        // მობილურზე swipe
         let touchStartX = 0;
         let touchStartY = 0;
         const slider = document.querySelector('.hero-slider');
@@ -45,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.addEventListener('touchend', e => {
                 const diffX = touchStartX - e.changedTouches[0].clientX;
                 const diffY = touchStartY - e.changedTouches[0].clientY;
-                // მხოლოდ თუ ჰორიზონტალური მოძრაობა ვერტიკალურზე მეტია
                 if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
                     goTo(diffX > 0 ? current + 1 : current - 1);
                     resetAutoplay();
@@ -63,9 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && nav) {
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
-            nav.classList.toggle('active');
+            const isOpen = nav.classList.toggle('active');
             hamburger.classList.toggle('active');
-            document.body.classList.toggle('lock-scroll');
+            // სქროლი მხოლოდ მენიუს გახსნისას იბლოკება
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
     }
 
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             nav && nav.classList.remove('active');
             hamburger && hamburger.classList.remove('active');
-            document.body.classList.remove('lock-scroll');
+            document.body.style.overflow = '';
         });
     });
 
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!nav.contains(e.target) && !(hamburger && hamburger.contains(e.target))) {
                 nav.classList.remove('active');
                 hamburger && hamburger.classList.remove('active');
-                document.body.classList.remove('lock-scroll');
+                document.body.style.overflow = '';
             }
         }
     });
