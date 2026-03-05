@@ -55,7 +55,7 @@ ul { list-style:none; }
 }
 
 .logo img {
-    height:120px;
+    height:150px;
     width:auto;
     display:block;
 }
@@ -276,5 +276,5 @@ footer {
     .products-section { padding-top:180px !important; }
     .page-section { padding-top:140px !important; }
 
-    .logo img { height:75px; }
+    .logo img { height:85px; }
 }
