@@ -2,7 +2,6 @@
 
 /* ================= VARIABLES ================= */
 :root {
-    /* ფერები: მდიდარი ტონები */
     --bg-body: #E0C097;
     --hero-bg-dark: #D4A67E;
     --hero-bg-mid: #E6CAA6;
@@ -28,9 +27,7 @@ body {
     transition: 0.3s;
 }
 
-body.lock-scroll {
-    overflow: hidden; /* scroll lock when menu open */
-}
+body.lock-scroll { overflow: hidden; }
 
 .container {
     width:90%;
@@ -43,13 +40,12 @@ ul { list-style:none; }
 
 /* ================= HEADER ================= */
 .site-header {
-    background: var(--bg-body);
-    padding:15px 0;
-    position:fixed;
+    background: transparent;
+    padding:25px 0;
+    position:absolute;
     top:0;
     width:100%;
     z-index:1000;
-    box-shadow: 0 2px 12px rgba(45,36,30,0.08);
 }
 
 .header-content {
@@ -59,16 +55,12 @@ ul { list-style:none; }
 }
 
 .logo img {
-    height:120px;   /* გაზრდილი ზომა */
+    height:120px;
     width:auto;
     display:block;
 }
 
-/* NAVIGATION */
-.main-nav ul {
-    display:flex;
-    gap:25px;
-}
+.main-nav ul { display:flex; gap:25px; }
 
 .main-nav a {
     color: var(--text-main);
@@ -77,9 +69,7 @@ ul { list-style:none; }
     text-transform:uppercase;
 }
 
-.main-nav a:hover {
-    color: var(--accent);
-}
+.main-nav a:hover { color: var(--accent); }
 
 /* ================= HAMBURGER ================= */
 .hamburger {
@@ -102,28 +92,16 @@ ul { list-style:none; }
     transition:0.3s;
 }
 
-/* ===== Hamburger Animation to X ===== */
-.hamburger.active span:nth-child(1){
-    transform: rotate(45deg);
-    top:9px;
-}
-
-.hamburger.active span:nth-child(2){
-    opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-    transform: rotate(-45deg);
-    top:9px;
-}
-
+.hamburger.active span:nth-child(1){ transform: rotate(45deg); top:9px; }
+.hamburger.active span:nth-child(2){ opacity:0; }
+.hamburger.active span:nth-child(3){ transform: rotate(-45deg); top:9px; }
 .hamburger span:nth-child(1){ top:0; }
 .hamburger span:nth-child(2){ top:9px; }
 .hamburger span:nth-child(3){ top:18px; }
 
 /* ================= HERO SECTION ================= */
 .hero-section {
-    padding:200px 0 120px;
+    padding:180px 0 120px;
     background: linear-gradient(
         to bottom left,
         var(--hero-bg-dark) 0%,
@@ -146,7 +124,7 @@ ul { list-style:none; }
 
 .hero-text h1 {
     font-family: var(--font-head);
-    font-size:54px;
+    font-size:48px;
     font-weight:800;
     margin-bottom:24px;
     color: var(--text-main);
@@ -161,20 +139,24 @@ ul { list-style:none; }
     margin-bottom:35px;
 }
 
-/* ================= PAGE SECTION (products, blog, contact) ================= */
-.page-section {
-    padding: 140px 0 80px;
-}
-
 /* ================= PRODUCTS ================= */
-.products-section {
-    padding:100px 0;
-}
+.products-section { padding:100px 0; }
+
+/* products.html გვერდი */
+.page-section { padding:160px 0 80px; }
 
 .products-grid {
     display:grid;
     grid-template-columns:1fr;
     gap:40px;
+}
+
+.product-img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:16px;
+    margin-bottom:15px;
 }
 
 .product-card {
@@ -187,9 +169,7 @@ ul { list-style:none; }
     transition: transform 0.3s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-12px);
-}
+.product-card:hover { transform: translateY(-12px); }
 
 .product-card h3 {
     font-family: var(--font-head);
@@ -206,6 +186,41 @@ ul { list-style:none; }
     color:#8C6239;
 }
 
+/* ================= SALE ================= */
+.price-wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+.price-old {
+    text-decoration:line-through;
+    color:#aaa;
+    font-size:1rem;
+    font-weight:600;
+}
+
+.price-new {
+    color:#e63946;
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+.sale-badge {
+    display:inline-block;
+    background:#e63946;
+    color:white;
+    font-size:0.7rem;
+    padding:3px 10px;
+    border-radius:20px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    margin-bottom:4px;
+}
+
+/* ================= BUTTON ================= */
 .btn {
     display:inline-block;
     padding:14px 34px;
@@ -216,45 +231,12 @@ ul { list-style:none; }
     border:2px solid var(--accent);
     color: var(--accent);
     cursor:pointer;
+    background: transparent;
 }
 
 .btn:hover {
     background: var(--accent);
     color:#fff;
-}
-
-/* ================= SALE / АКЦИЯ ================= */
-.price-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.price-old {
-    text-decoration: line-through;
-    color: #aaa;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.price-new {
-    color: #e63946;
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-.sale-badge {
-    display: inline-block;
-    background: #e63946;
-    color: white;
-    font-size: 0.7rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
 }
 
 /* ================= FOOTER ================= */
@@ -274,7 +256,6 @@ footer {
 @media (max-width:767px){
     .hamburger { display:block; }
 
-    /* მენიუ მარჯვნიდან */
     .main-nav {
         position:fixed;
         top:0;
@@ -287,17 +268,13 @@ footer {
         box-shadow: -2px 0 10px rgba(0,0,0,0.2);
     }
 
-    .main-nav ul {
-        flex-direction:column;
-        gap:20px;
-    }
-
+    .main-nav ul { flex-direction:column; gap:20px; }
     .main-nav.active { right:0; }
 
-    /* მობილურზე padding რომ ლოგო არ ფარავდეს */
-    .products-section { padding-top:140px !important; }
-    .page-section { padding-top: 110px !important; }
+    .hero-text h1 { font-size:34px; }
 
-    /* ლოგო ოდნავ პატარავდება */
+    .products-section { padding-top:180px !important; }
+    .page-section { padding-top:140px !important; }
+
     .logo img { height:75px; }
 }
