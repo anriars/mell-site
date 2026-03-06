@@ -167,7 +167,7 @@ ul { list-style:none; }
 .dot.active { background: var(--accent); width: 28px; border-radius: 5px; }
 
 /* ================= PRODUCTS PAGE ================= */
-.page-section { padding: 160px 0 80px; }
+.page-section { padding: 200px 0 80px; }
 
 .products-grid {
     display: grid;
